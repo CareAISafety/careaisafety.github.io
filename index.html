@@ -1,199 +1,759 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-US">
 <head>
-    <meta charset="utf-8"/>
-    <title>Center for Safe and Responsible AI (CARE)</title>
-    <meta content="Center for Safe and Responsible AI. Advancing responsible AI development through interdisciplinary research, collaboration, and education to ensure AI systems are safe, reliable, and beneficial." name="description"/>
-    <meta content="Center for Safe and Responsible AI (CARE)" property="og:title"/>
-    <meta content="Center for Safe and Responsible AI. Advancing responsible AI development through interdisciplinary research, collaboration, and education to ensure AI systems are safe, reliable, and beneficial." property="og:description"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Company | Safe &amp; Secure AI Solutions</title>
+    <meta content="Comprehensive safety evaluation of AI models - Secure your AI with advanced guardrails, train safe models, and explore innovative solutions." name="description"/>
+    <meta property="og:title" content="Your Company | Safe &amp; Secure AI Solutions" />
+    <meta property="og:description" content="Comprehensive safety evaluation of AI models - Secure your AI with advanced guardrails, train safe models, and explore innovative solutions." />
     
-    <!-- Favicon and App Icons -->
+    <!-- Favicon -->
     <link href="image/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
     <link href="image/logo.png" rel="apple-touch-icon"/>
-    
-    <!-- Styles -->
-    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Navigation -->
-    <nav class="nav-container">
-        <div class="nav-wrapper">
-            <div class="logo">
-                <a href="index.html" class="logo-container">
-                    <img src="image/logo.png" alt="CARE Logo" class="nav-logo"/>
-                    <div class="logo-text">
-                        <span class="logo-line">Center of Safe and</span>
-                        <span class="logo-line">Responsible AI</span>
-                    </div>
-                </a>
-            </div>
-            <div class="nav-links">
-                <a href="about.html">About us</a>
-                <a href="research.html">Our work</a>
-                <a href="ai-risk.html">AI Risk</a>
-                <a href="resources.html">Resources</a>
-                <a href="contact.html">Contact</a>
-                <a href="careers.html" class="button button-outline">Careers</a>
-                <a href="donate.html" class="button button-filled">Donate</a>
-            </div>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-purple: #6A49A8;
+            --secondary-purple: #8A66DB;
+            --light-purple: #D1BCF5;
+            --dark-purple: #3B2A5A;
+            --white: #ffffff;
+            --black: #000000;
+            --light-gray: #f5f5f7;
+            --medium-gray: #e0e0e0;
+            --text-dark: #333333;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Nunito Sans', 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        /* Container styles */
+        .container-large {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--dark-purple), var(--primary-purple));
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--light-purple);
+        }
+        
+        .nav-menu a.btn {
+            background-color: var(--white);
+            color: var(--primary-purple);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        
+        .nav-menu a.btn:hover {
+            background-color: var(--light-purple);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Newsletter Banner */
+        .newsletter-banner {
+            background-color: var(--light-purple);
+            padding: 12px 0;
+            text-align: center;
+        }
+        
+        .newsletter-banner p {
+            font-weight: 500;
+            color: var(--dark-purple);
+        }
+        
+        .arrow-icon {
+            font-family: sans-serif;
+            display: inline-block;
+            margin-left: 3px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(106, 73, 168, 0.9), rgba(59, 42, 90, 0.9)), url('image/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-purple);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .btn:hover {
+            background-color: var(--white);
+            color: var(--primary-purple);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .button-primary {
+            background-color: var(--secondary-purple);
+            color: var(--white);
+        }
+        
+        .button-secondary {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            margin-left: 15px;
+        }
+        
+        .button-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-purple);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--dark-purple);
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-bottom: 4px solid var(--primary-purple);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark-purple);
+        }
+        
+        .feature-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(106, 73, 168, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .card-icon img {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .learn-more {
+            color: var(--primary-purple);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .learn-more:hover {
+            text-decoration: underline;
+        }
+        
+        /* Quote Section */
+        .quote-section {
+            background-color: var(--light-purple);
+            padding: 80px 20px;
+        }
+        
+        .quote-content {
+            display: flex;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .quote-image {
+            flex: 0 0 200px;
+        }
+        
+        .quote-image img {
+            width: 100%;
+            border-radius: 50%;
+            border: 4px solid var(--white);
+        }
+        
+        .quote-text {
+            flex: 1;
+        }
+        
+        blockquote {
+            font-size: 24px;
+            line-height: 1.5;
+            color: var(--dark-purple);
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        blockquote:before {
+            content: """;
+            font-size: 70px;
+            position: absolute;
+            left: -40px;
+            top: -20px;
+            color: rgba(106, 73, 168, 0.2);
+        }
+        
+        .quote-author h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: var(--dark-purple);
+        }
+        
+        .quote-author p {
+            color: #666;
+            margin: 0;
+        }
+        
+        /* Risks Section */
+        .risks-section {
+            padding: 80px 20px;
+            background-color: var(--white);
+        }
+        
+        .risks-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .risks-text {
+            flex: 1;
+        }
+        
+        .risks-text p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .risks-image {
+            flex: 0 0 300px;
+        }
+        
+        .risks-image img {
+            width: 100%;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            padding: 80px 20px;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta .btn {
+            background-color: var(--white);
+            color: var(--primary-purple);
+        }
+        
+        .cta .btn:hover {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        /* Partners Section */
+        .partners-section {
+            padding: 80px 20px;
+            background-color: var(--light-gray);
+        }
+        
+        .section-heading {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: var(--dark-purple);
+        }
+        
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .partner-logo {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 80px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-purple);
+            color: var(--white);
+            padding: 70px 20px 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-container p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-purple);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--light-purple);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary-purple);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-purple);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .feature-grid, .partners-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quote-content, .risks-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .quote-image {
+                flex: 0 0 150px;
+            }
+            
+            blockquote:before {
+                left: 0;
+                top: -40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="image/logo.png" alt="Your Company Logo">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#" class="btn">Contact Us</a></li>
+            </ul>
         </div>
-    </nav>
+    </header>
 
     <!-- Newsletter Banner -->
     <div class="newsletter-banner">
         <div class="container-large">
-            <p>Get insights on the latest developments in AI delivered to your inbox <span class="arrow-icon">→</span></p>
+            <p>Get insights on the latest AI safety developments delivered to your inbox <span class="arrow-icon">→</span></p>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <header class="hero-section">
-        <div class="container-large">
-            <div class="hero-content">
-                <h1>Ensuring Safe and Responsible AI Development</h1>
-                <div class="hero-description">
-                    <p>The <strong>Center for Safe and Responsible AI</strong> (CARE) is a UIUC-based research center focused on ensuring AI systems are designed and deployed safely, ethically, and beneficially.</p>
+    <section class="hero">
+        <h1>Make Your AI Safe & Secure</h1>
+        <p>At Your Company, our mission is to ensure a future that we can all trust. Partner with us to navigate the complexities of AI safety and security and unlock innovation without compromise.</p>
+        <a href="#" class="btn">Get Started</a>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-title">
+            <h2>Comprehensive AI Safety Solutions</h2>
+            <p>We provide end-to-end AI safety and security services to help organizations build trustworthy AI systems.</p>
+        </div>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="card-icon">
+                    <img src="image/icon-guardrails.svg" alt="Guardrails icon">
                 </div>
-                <div class="button-container">
-                    <a href="research.html" class="button button-primary">View our work <span class="arrow-icon">→</span></a>
-                    <a href="about.html" class="button button-secondary">Our mission</a>
+                <h3>Advanced Guardrails</h3>
+                <p>Implement robust safeguards to prevent misuse and ensure your AI systems operate within safe parameters.</p>
+                <a href="#" class="learn-more">Learn more <span class="arrow-icon">→</span></a>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon">
+                    <img src="image/icon-evaluation.svg" alt="Evaluation icon">
+                </div>
+                <h3>Safety Evaluation</h3>
+                <p>Comprehensive assessments to identify risks and vulnerabilities in your AI models before deployment.</p>
+                <a href="#" class="learn-more">Learn more <span class="arrow-icon">→</span></a>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon">
+                    <img src="image/icon-training.svg" alt="Training icon">
+                </div>
+                <h3>Secure Training</h3>
+                <p>Train AI models with security-first methodologies to protect against adversarial attacks and data leakage.</p>
+                <a href="#" class="learn-more">Learn more <span class="arrow-icon">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container-large">
+            <div class="quote-content">
+                <div class="quote-image">
+                    <img src="image/team/ceo.jpg" alt="CEO">
+                </div>
+                <div class="quote-text">
+                    <blockquote>
+                        "Building safe AI requires both technical excellence and ethical foresight. Our mission is to help organizations navigate this complex landscape to create AI systems that are not only powerful but also responsible and trustworthy."
+                    </blockquote>
+                    <div class="quote-author">
+                        <h3>Jane Smith</h3>
+                        <p>CEO & Founder</p>
+                        <p>AI Safety Expert</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Research Areas Section -->
-        <section class="featured-section">
-            <div class="container-large">
-                <h2 class="section-heading">AI Safety Field Building</h2>
-                <div class="featured-grid">
-                    <div class="featured-card">
-                        <div class="card-icon">
-                            <img src="image/icon-research.svg" alt="Research icon">
-                        </div>
-                        <h3>AI Safety + Science</h3>
-                        <p>Building unified evaluation platforms for AI4Science models in collaboration with national labs and research centers.</p>
-                        <a href="research.html#science" class="learn-more">Learn more <span class="arrow-icon">→</span></a>
-                    </div>
-                    <div class="featured-card">
-                        <div class="card-icon">
-                            <img src="image/icon-healthcare.svg" alt="Healthcare icon">
-                        </div>
-                        <h3>AI Safety + Healthcare</h3>
-                        <p>Developing trustworthy models for medical predictions and healthcare recommendations.</p>
-                        <a href="research.html#healthcare" class="learn-more">Learn more <span class="arrow-icon">→</span></a>
-                    </div>
-                    <div class="featured-card">
-                        <div class="card-icon">
-                            <img src="image/icon-economics.svg" alt="Economics icon">
-                        </div>
-                        <h3>AI Safety + Economics</h3>
-                        <p>Designing mechanisms for responsible AI deployment in economic systems.</p>
-                        <a href="research.html#economics" class="learn-more">Learn more <span class="arrow-icon">→</span></a>
-                    </div>
-                </div>
-                <div class="see-all">
-                    <a href="research.html">See all work</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Team Quote Section -->
-        <section class="quote-section">
-            <div class="container-large">
-                <div class="quote-content">
-                    <div class="quote-image">
-                        <img src="image/team/bo-li.jpg" alt="Bo Li">
-                    </div>
-                    <div class="quote-text">
-                        <blockquote>
-                            "Ensuring safe AI requires more than just technical work. CARE takes a multidisciplinary approach working across academic disciplines, with industry partners, and engaging with policymakers."
-                        </blockquote>
-                        <div class="quote-author">
-                            <h3>Bo Li</h3>
-                            <p>Director, Center for Safe and Responsible AI</p>
-                            <p>Professor, University of Illinois at Urbana-Champaign</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI Risks Section -->
-        <section class="risks-section">
-            <div class="container-large">
-                <h2 class="section-heading">Risks from AI</h2>
-                <div class="risks-content">
-                    <div class="risks-text">
-                        <p>Artificial Intelligence (AI) possesses the potential to benefit and advance society. Like any other powerful technology, AI also carries inherent risks, including some which are potentially catastrophic.</p>
-                        <a href="ai-risk.html" class="button button-primary">Learn about AI risks</a>
-                    </div>
-                    <div class="risks-image">
-                        <img src="image/hourglass.svg" alt="Hourglass illustration">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Partners Section -->
-        <section class="partners-section">
-            <div class="container-large">
-                <h2 class="section-heading">Our Partners</h2>
-                <div class="partners-grid">
-                    <div class="partner-logo">
-                        <img src="image/partners/uiuc.png" alt="UIUC">
-                    </div>
-                    <div class="partner-logo">
-                        <img src="image/partners/lawrence.png" alt="Lawrence Livermore">
-                    </div>
-                    <div class="partner-logo">
-                        <img src="image/partners/mlcommons.png" alt="MLCommons">
-                    </div>
-                    <div class="partner-logo">
-                        <img src="image/partners/open-philanthropy.png" alt="Open Philanthropy">
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
+    <!-- Risks Section -->
+    <section class="risks-section">
         <div class="container-large">
-            <div class="footer-content">
+            <h2 class="section-heading">Understanding AI Risks</h2>
+            <div class="risks-content">
+                <div class="risks-text">
+                    <p>While AI offers tremendous benefits, it also presents unique risks that must be carefully managed. From data security vulnerabilities to alignment failures, understanding these risks is the first step toward building safer systems.</p>
+                    <a href="#" class="btn button-primary">Explore AI Risk Management</a>
+                </div>
+                <div class="risks-image">
+                    <img src="image/ai-risks.svg" alt="AI Risks illustration">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to Secure Your AI Systems?</h2>
+            <p>Get in touch with our team of experts to learn how we can help you build safe, secure, and trustworthy AI solutions.</p>
+            <a href="#" class="btn">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="container-large">
+            <h2 class="section-heading">Our University & Industry Partners</h2>
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <img src="image/partners/university1.png" alt="University Partner">
+                </div>
+                <div class="partner-logo">
+                    <img src="image/partners/university2.png" alt="University Partner">
+                </div>
+                <div class="partner-logo">
+                    <img src="image/partners/industry1.png" alt="Industry Partner">
+                </div>
+                <div class="partner-logo">
+                    <img src="image/partners/industry2.png" alt="Industry Partner">
+                </div>
+                <div class="partner-logo">
+                    <img src="image/partners/research.png" alt="Research Partner">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div>
                 <div class="footer-logo">
-                    <img src="image/logo.png" alt="CARE Logo" class="footer-logo-img"/>
+                    <img src="image/logo.png" alt="Company Logo">
                 </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Contact</h4>
-                        <p>University of Illinois at Urbana-Champaign</p>
-                        <p>Email: contact@care.illinois.edu</p>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Quick Links</h4>
-                        <a href="about.html">About</a>
-                        <a href="research.html">Research</a>
-                        <a href="team.html">Team</a>
-                        <a href="publications.html">Publications</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Connect</h4>
-                        <a href="https://twitter.com/CARE_AI" target="_blank">Twitter</a>
-                        <a href="https://linkedin.com/company/care-ai" target="_blank">LinkedIn</a>
-                        <a href="https://github.com/CARE-AI" target="_blank">GitHub</a>
-                    </div>
+                <p>Empowering businesses with safe and secure AI solutions for a trustworthy future.</p>
+                <div class="social-links">
+                    <a href="#"><span>LI</span></a>
+                    <a href="#"><span>TW</span></a>
+                    <a href="#"><span>FB</span></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Center for Safe and Responsible AI. All rights reserved.</p>
+            <div>
+                <h4>Solutions</h4>
+                <ul class="footer-links">
+                    <li><a href="#">AI Safety Evaluation</a></li>
+                    <li><a href="#">Security Guardrails</a></li>
+                    <li><a href="#">Secure Training</a></li>
+                    <li><a href="#">Risk Assessment</a></li>
+                </ul>
             </div>
+            <div>
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Research</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Documentation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Your Company. All Rights Reserved.
         </div>
     </footer>
 </body>
