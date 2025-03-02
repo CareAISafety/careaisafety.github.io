@@ -128,14 +128,23 @@
         
         /* Newsletter Banner */
         .newsletter-banner {
-            background-color: var(--light-purple);
-            padding: 12px 0;
-            text-align: center;
+            background-color: #0056b3;
+            padding: 0.75rem 0;
+            color: white;
         }
         
-        .newsletter-banner p {
+        .banner-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+            text-decoration: none;
             font-weight: 500;
-            color: var(--dark-purple);
+        }
+        
+        .banner-link:hover {
+            text-decoration: underline;
         }
         
         .arrow-icon {
@@ -144,64 +153,137 @@
             margin-left: 3px;
         }
         
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(106, 73, 168, 0.9), rgba(59, 42, 90, 0.9)), url('image/hero-bg.jpg');
+        /* Hero Section with Image Background */
+        .hero-section {
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 6rem 2rem;
+        }
+        
+        /* Background Elements */
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('image/background/main_1.jpg');
             background-size: cover;
             background-position: center;
-            color: var(--white);
+            transform: scale(1.05);
+            animation: subtle-zoom 20s ease-in-out infinite alternate;
+        }
+        
+        .overlay-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(44, 22, 84, 0.3) 0%, rgba(74, 30, 140, 0.2) 50%, rgba(126, 87, 194, 0.1) 100%);
+        }
+        
+        @keyframes subtle-zoom {
+            0% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+        
+        /* Hero Content Styles */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
             text-align: center;
-            padding: 100px 20px;
+            color: white;
         }
         
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 20px;
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
             line-height: 1.2;
+            animation: fade-in-up 0.8s ease-out forwards;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
         
-        .hero p {
-            font-size: 20px;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
+        .hero-subtitle {
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            animation: fade-in-up 0.8s ease-out 0.2s forwards;
+            opacity: 0;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fade-in-up 0.8s ease-out 0.4s forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .btn {
-            display: inline-block;
-            background-color: var(--secondary-purple);
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
+            display: inline-flex;
+            padding: 0.75rem 1.5rem;
             font-weight: 600;
+            border-radius: 4px;
+            text-decoration: none;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .btn:hover {
-            background-color: var(--white);
-            color: var(--primary-purple);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .button-primary {
-            background-color: var(--secondary-purple);
-            color: var(--white);
+            background-color: white;
+            color: #4a1e8c;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .button-primary:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
         
         .button-secondary {
             background-color: transparent;
-            border: 2px solid var(--white);
-            color: var(--white);
-            margin-left: 15px;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         
         .button-secondary:hover {
-            background-color: var(--white);
-            color: var(--primary-purple);
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
         
         /* Features Section */
@@ -565,8 +647,23 @@
                 padding: 15px 20px;
             }
             
-            .hero h1 {
-                font-size: 36px;
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
             }
             
             .feature-grid, .partners-grid {
@@ -623,16 +720,34 @@
     <!-- Newsletter Banner -->
     <div class="newsletter-banner">
         <div class="container-large">
-            <p>Get insights on the latest AI safety developments delivered to your inbox <span class="arrow-icon">→</span></p>
+            <a href="#subscribe" class="banner-link">
+                <span>Get insights on the latest AI safety developments delivered to your inbox</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.16797 10.0003H15.8346M15.8346 10.0003L10.0013 4.16699M15.8346 10.0003L10.0013 15.8337" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Center of Safe and Responsible AI</h1>
-        <p>At CARE, our mission is to ensure AI systems are designed and used in ways that maximize safety and societal benefit while minimizing risks. We bring together leading researchers to address the trustworthiness, ethical, and societal implications of AI technologies.</p>
-        <a href="about.html" class="btn button-primary">Learn More</a>
-        <a href="contact.html" class="btn button-secondary">Contact Us</a>
+    <!-- Hero Section with Image Background -->
+    <section class="hero-section">
+        <!-- Background Image -->
+        <div class="hero-background">
+            <div class="background-image"></div>
+            <div class="overlay-gradient"></div>
+        </div>
+        
+        <!-- Content Container -->
+        <div class="hero-content container-large">
+            <h1 class="hero-title">Center of Safe and Responsible AI</h1>
+            <div class="hero-subtitle">
+                <p>At CARE, our mission is to ensure AI systems are designed and used in ways that maximize safety and societal benefit while minimizing risks. We bring together leading researchers to address the trustworthiness, ethical, and societal implications of AI technologies.</p>
+            </div>
+            <div class="hero-buttons">
+                <a href="about.html" class="btn button-primary">Learn More</a>
+                <a href="contact.html" class="btn button-secondary">Contact Us</a>
+            </div>
+        </div>
     </section>
 
     <!-- Features Section -->
