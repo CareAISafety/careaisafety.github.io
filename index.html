@@ -70,9 +70,22 @@
             margin: 0 auto;
         }
         
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 15px;
+        }
+        
         .logo img {
-            height: 40px;
+            height: 50px;
             width: auto;
+        }
+        
+        .logo .uiuc-logo {
+            height: 40px;
+            border-right: 1px solid rgba(255,255,255,0.3);
+            padding-right: 15px;
         }
         
         .nav-menu {
@@ -80,6 +93,7 @@
             list-style: none;
             margin: 0;
             padding: 0;
+            align-items: center;
         }
         
         .nav-menu li {
@@ -437,8 +451,8 @@
         .partner-logo img {
             max-width: 100%;
             max-height: 80px;
-            filter: grayscale(100%);
-            opacity: 0.7;
+            filter: grayscale(40%);
+            opacity: 0.8;
             transition: all 0.3s ease;
         }
         
@@ -572,6 +586,19 @@
                 left: 0;
                 top: -40px;
             }
+            
+            .logo {
+                gap: 10px;
+            }
+            
+            .logo .uiuc-logo {
+                height: 30px;
+                padding-right: 10px;
+            }
+            
+            .logo img {
+                height: 40px;
+            }
         }
     </style>
 </head>
@@ -580,14 +607,15 @@
     <header class="header">
         <div class="header-container">
             <a href="index.html" class="logo">
-                <img src="image/logo.png" alt="Your Company Logo">
+                <img src="image/uiuc_text_no_bg.png" alt="University of Illinois Urbana-Champaign" class="uiuc-logo">
+                <img src="image/care_full_text_smaller_plain.png" alt="Center of Safe and Responsible AI">
             </a>
             <ul class="nav-menu">
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Solutions</a></li>
-                <li><a href="#">Resources</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#" class="btn">Contact Us</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="event.html">Event</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html" class="btn">Contact Us</a></li>
             </ul>
         </div>
     </header>
@@ -601,77 +629,100 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Make Your AI Safe & Secure</h1>
-        <p>At Your Company, our mission is to ensure a future that we can all trust. Partner with us to navigate the complexities of AI safety and security and unlock innovation without compromise.</p>
-        <a href="#" class="btn">Get Started</a>
+        <h1>Center of Safe and Responsible AI</h1>
+        <p>At CARE, our mission is to ensure AI systems are designed and used in ways that maximize safety and societal benefit while minimizing risks. We bring together leading researchers to address the trustworthiness, ethical, and societal implications of AI technologies.</p>
+        <a href="about.html" class="btn button-primary">Learn More</a>
+        <a href="contact.html" class="btn button-secondary">Contact Us</a>
     </section>
 
     <!-- Features Section -->
     <section class="features">
         <div class="section-title">
-            <h2>Comprehensive AI Safety Solutions</h2>
-            <p>We provide end-to-end AI safety and security services to help organizations build trustworthy AI systems.</p>
+            <h2>Our Vision for Safe and Responsible AI</h2>
+            <p>We envision a future where AI technologies are designed, implemented, and regulated in a manner that maximizes benefits while minimizing potential risks and harm.</p>
         </div>
         <div class="feature-grid">
             <div class="feature-card">
                 <div class="card-icon">
-                    <img src="image/icon-guardrails.svg" alt="Guardrails icon">
+                    <img src="image/icon-risk.svg" alt="Risk Assessment Icon">
                 </div>
-                <h3>Advanced Guardrails</h3>
-                <p>Implement robust safeguards to prevent misuse and ensure your AI systems operate within safe parameters.</p>
+                <h3>Unified Risk Assessment</h3>
+                <p>Developing comprehensive evaluation algorithms and platforms for existing AI models and systems to identify potential safety issues.</p>
                 <a href="#" class="learn-more">Learn more <span class="arrow-icon">→</span></a>
             </div>
             <div class="feature-card">
                 <div class="card-icon">
-                    <img src="image/icon-evaluation.svg" alt="Evaluation icon">
+                    <img src="image/icon-safety.svg" alt="Safety Enhancement Icon">
                 </div>
-                <h3>Safety Evaluation</h3>
-                <p>Comprehensive assessments to identify risks and vulnerabilities in your AI models before deployment.</p>
+                <h3>Safety Enhancement</h3>
+                <p>Creating innovative algorithms and models designed specifically to improve the safety of next-generation AI systems.</p>
                 <a href="#" class="learn-more">Learn more <span class="arrow-icon">→</span></a>
             </div>
             <div class="feature-card">
                 <div class="card-icon">
-                    <img src="image/icon-training.svg" alt="Training icon">
+                    <img src="image/icon-theory.svg" alt="Theoretical Guarantees Icon">
                 </div>
-                <h3>Secure Training</h3>
-                <p>Train AI models with security-first methodologies to protect against adversarial attacks and data leakage.</p>
+                <h3>Theoretical Guarantees</h3>
+                <p>Establishing mathematical foundations and formal guarantees for AI safety, such as conformal risk upper bounds.</p>
                 <a href="#" class="learn-more">Learn more <span class="arrow-icon">→</span></a>
             </div>
         </div>
     </section>
 
     <!-- Quote Section -->
-    <section class="quote-section">
+    <section class="quote-section" style="padding: 30px 10px;">
         <div class="container-large">
-            <div class="quote-content">
-                <div class="quote-image">
-                    <img src="image/team/ceo.jpg" alt="CEO">
+            <div class="quote-content" style="max-width: 1100px;">
+                <div class="quote-image" style="flex: 0 0 120px; margin-right: 30px;">
+                    <img src="image/bo_li_director.jpeg" alt="Bo Li" style="width: 115px; height: 115px; object-fit: cover;">
                 </div>
                 <div class="quote-text">
                     <blockquote>
-                        "Building safe AI requires both technical excellence and ethical foresight. Our mission is to help organizations navigate this complex landscape to create AI systems that are not only powerful but also responsible and trustworthy."
+                        "As AI systems become more capable and are deployed in high-stakes domains, it is crucial that they behave safely, reliably, and beneficially. Our center brings together diverse perspectives from academia, industry, and society to shape AI development in a manner that is transparent, accountable, and socially responsible."
                     </blockquote>
                     <div class="quote-author">
-                        <h3>Jane Smith</h3>
-                        <p>CEO & Founder</p>
-                        <p>AI Safety Expert</p>
+                        <h3>Bo Li</h3>
+                        <p>Director, Center of Safe and Responsible AI</p>
+                        <p>University of Illinois at Urbana-Champaign</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Risks Section -->
+    <!-- Research Pillars Section -->
     <section class="risks-section">
         <div class="container-large">
-            <h2 class="section-heading">Understanding AI Risks</h2>
-            <div class="risks-content">
-                <div class="risks-text">
-                    <p>While AI offers tremendous benefits, it also presents unique risks that must be carefully managed. From data security vulnerabilities to alignment failures, understanding these risks is the first step toward building safer systems.</p>
-                    <a href="#" class="btn button-primary">Explore AI Risk Management</a>
+            <h2 class="section-heading">Our Research Pillars</h2>
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 40px;">The Center for Safe and Responsible AI focuses on seven key interdisciplinary research areas</p>
+            <div class="feature-grid" style="margin-top: 40px;">
+                <div class="feature-card">
+                    <h3>AI Safety + Science</h3>
+                    <p>Building unified evaluation platforms for AI4Science models in collaboration with national labs and research centers, ensuring safe application in scientific domains.</p>
                 </div>
-                <div class="risks-image">
-                    <img src="image/ai-risks.svg" alt="AI Risks illustration">
+                <div class="feature-card">
+                    <h3>AI Safety + Data/Computing</h3>
+                    <p>Developing secure, reliable, and efficient AI systems with robust data integrity, computational reliability, and resistance to adversarial threats.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>AI Safety + Algorithms</h3>
+                    <p>Creating fundamental principles and methodologies to ensure AI systems operate safely and predictably with strong theoretical foundations.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>AI Safety + Medicine</h3>
+                    <p>Optimizing trustworthy models for healthcare applications with transparency and interoperability to ground predictions in this safety-critical domain.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>AI Safety + Economics</h3>
+                    <p>Proposing novel mechanism designs and risk assessments for AI in economic activities, ensuring sustainable and beneficial economic impacts.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>AI Safety + Law/Policy</h3>
+                    <p>Exploring regulatory frameworks, participatory governance, and ethical guidelines to ensure responsible AI development and deployment.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>AI Safety + Social Good</h3>
+                    <p>Leveraging AI to address critical social challenges while promoting equity, inclusivity, and accessibility, particularly for marginalized communities.</p>
                 </div>
             </div>
         </div>
@@ -680,31 +731,41 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="cta-content">
-            <h2>Ready to Secure Your AI Systems?</h2>
-            <p>Get in touch with our team of experts to learn how we can help you build safe, secure, and trustworthy AI solutions.</p>
-            <a href="#" class="btn">Contact Us Today</a>
+            <h2>Join Us in Shaping the Future of Safe AI</h2>
+            <p>We're building a community of researchers, industry partners, and policymakers committed to ensuring AI benefits humanity. Get involved through our events, partnerships, or research collaborations.</p>
+            <a href="contact.html" class="btn">Contact Us Today</a>
         </div>
     </section>
 
     <!-- Partners Section -->
     <section class="partners-section">
         <div class="container-large">
-            <h2 class="section-heading">Our University & Industry Partners</h2>
+            <h2 class="section-heading">Our Partners & Collaborators</h2>
             <div class="partners-grid">
-                <div class="partner-logo">
-                    <img src="image/partners/university1.png" alt="University Partner">
+                <div class="partner-logo" style="height: 100px; display: flex; align-items: center; justify-content: center;">
+                    <a href="https://mlcommons.org/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="image/logo/mlcommons.jpg" alt="MLCommons" style="max-height: 60px; width: auto;">
+                    </a>
                 </div>
-                <div class="partner-logo">
-                    <img src="image/partners/university2.png" alt="University Partner">
+                <div class="partner-logo" style="height: 100px; display: flex; align-items: center; justify-content: center;">
+                    <a href="https://www.llnl.gov/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="image/logo/llnl-logo.webp" alt="Lawrence Livermore National Lab" style="max-height: 60px; width: auto;">
+                    </a>
                 </div>
-                <div class="partner-logo">
-                    <img src="image/partners/industry1.png" alt="Industry Partner">
+                <div class="partner-logo" style="height: 100px; display: flex; align-items: center; justify-content: center;">
+                    <a href="https://www.safe.ai/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="image/logo/cais.png" alt="Center for AI Safety" style="max-height: 60px; width: auto;">
+                    </a>
                 </div>
-                <div class="partner-logo">
-                    <img src="image/partners/industry2.png" alt="Industry Partner">
+                <div class="partner-logo" style="height: 100px; display: flex; align-items: center; justify-content: center;">
+                    <a href="https://rdi.berkeley.edu/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="image/logo/rdi.jpg" alt="Berkeley RDI Center" style="max-height: 60px; width: auto;">
+                    </a>
                 </div>
-                <div class="partner-logo">
-                    <img src="image/partners/research.png" alt="Research Partner">
+                <div class="partner-logo" style="height: 100px; display: flex; align-items: center; justify-content: center;">
+                    <a href="https://www.openphilanthropy.org/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="image/logo/op.jpg" alt="Open Philanthropy" style="max-height: 60px; width: auto;">
+                    </a>
                 </div>
             </div>
         </div>
@@ -715,7 +776,8 @@
         <div class="footer-container">
             <div>
                 <div class="footer-logo">
-                    <img src="image/logo.png" alt="Company Logo">
+                    <!-- <img src="image/logo.png" alt="Company Logo"> -->
+                    <img src="image/care_full_text_smaller_plain.png" alt="Center of Safe and Responsible AI" style="height: 45px; width: auto;">
                 </div>
                 <p>Empowering businesses with safe and secure AI solutions for a trustworthy future.</p>
                 <div class="social-links">
