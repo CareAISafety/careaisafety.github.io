@@ -428,51 +428,98 @@
             background-color: var(--light-gray);
         }
         
-        .publication-card {
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .publication-block {
             background-color: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .publication-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .publication-header {
+            background: linear-gradient(to right, var(--light-gray), #fff);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .publication-header .conf-logo {
+            height: 60px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        
+        .publication-body {
             padding: 25px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
-        .publication-card:hover {
-            transform: translateY(-3px);
-        }
-        
-        .publication-card h3 {
+        .publication-block h3 {
             font-size: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: var(--dark-purple);
+            line-height: 1.4;
         }
         
-        .publication-card .authors {
-            font-size: 15px;
+        .publication-block .authors {
+            font-size: 14px;
             color: var(--text-dark);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            flex-grow: 1;
         }
         
-        .publication-card .venue {
+        .publication-block .venue {
             display: inline-block;
             background-color: var(--light-purple);
             color: var(--dark-purple);
-            padding: 4px 10px;
+            padding: 5px 12px;
             border-radius: 4px;
             font-size: 14px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-weight: 600;
         }
         
-        .publication-card .links a {
-            display: inline-block;
-            margin-right: 15px;
+        .publication-block .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: auto;
+        }
+        
+        .publication-block .links a {
+            display: inline-flex;
+            align-items: center;
             color: var(--primary-purple);
             font-weight: 500;
             text-decoration: none;
+            gap: 5px;
+            transition: color 0.2s ease;
         }
         
-        .publication-card .links a:hover {
-            text-decoration: underline;
+        .publication-block .links a:hover {
+            color: var(--secondary-purple);
         }
         
         .breadcrumb {
@@ -546,6 +593,10 @@
             
             .research-hero h1 {
                 font-size: 36px;
+            }
+            
+            .publications-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -725,53 +776,58 @@
                 <p>Our researchers are actively publishing their findings in top-tier academic conferences and journals. Explore our recent publications below.</p>
             </div>
             
-            <div class="publications-list">
-                <!-- Publication 1 -->
-                <div class="publication-card">
-                    <h3>DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models</h3>
-                    <div class="authors">Boxin Wang, Weixin Chen, Hengzhi Pei, Chulin Xie, Mintong Kang, Chenhui Zhang, et al.</div>
-                    <div class="venue">NeurIPS 2023</div>
-                    <div class="links">
-                        <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
-                        <a href="#"><i class="fas fa-code"></i> Code</a>
-                        <a href="#"><i class="fas fa-external-link-alt"></i> Project Page</a>
+            <div class="publications-grid">
+
+                <!-- MMDT Paper -->
+                <div class="publication-block">
+                    <div class="publication-header">
+                        <img src="image/icon/conf_icon/iclr.svg" alt="ICLR" class="conf-logo">
+                    </div>
+                    <div class="publication-body">
+                        <h3>MMDT: Decoding the Trustworthiness and Safety of Multimodal Foundation Models</h3>
+                        <div class="authors">Chejian Xu, Jiawei Zhang, Zhaorun Chen, Chulin Xie, Mintong Kang, Yujin Potter, Zhun Wang, Zhuowen Yuan, Alexander Xiong, Zidi Xiong, Chenhui Zhang, Lingzhi Yuan, Yi Zeng, Peiyang Xu, Chengquan Guo, Andy Zhou, Jeffrey Ziwei Tan, Xuandong Zhao, Francesco Pinto, Zhen Xiang, Yu Gai, Zinan Lin, Dan Hendrycks, Bo Li, Dawn Song</div>
+                        <div class="venue">ICLR 2025</div>
+                        <div class="links">
+                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
+                            <a href="#"><i class="fas fa-code"></i> Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Project Page</a>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Publication 2 -->
-                <div class="publication-card">
-                    <h3>Representation Engineering: A Top-Down Approach to AI Transparency</h3>
-                    <div class="authors">Andy Zou, Long Phan, Sarah Chen, James Campbell, Phillip Guo, Richard Ren, et al.</div>
-                    <div class="venue">ArXiv Preprint</div>
-                    <div class="links">
-                        <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
-                        <a href="#"><i class="fas fa-code"></i> Code</a>
+                <!-- AIR-Bench Paper -->
+                <div class="publication-block">
+                    <div class="publication-header">
+                        <img src="image/icon/conf_icon/iclr.svg" alt="ICLR" class="conf-logo">
+                    </div>
+                    <div class="publication-body">
+                        <h3>AIR-Bench 2024: A Safety Benchmark Based on Risk Categories from Regulations and Policies</h3>
+                        <div class="authors">Yi Zeng, Yu Yang, Andy Zhou, Jeffrey Ziwei Tan, Yuheng Tu, Yifan Mai, Kevin Klyman, Minzhou Pan, Ruoxi Jia, Dawn Song, Percy Liang, Bo Li</div>
+                        <div class="venue">ICLR 2025</div>
+                        <div class="links">
+                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
+                            <a href="#"><i class="fas fa-code"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- DecodingTrust Paper -->
+                <div class="publication-block">
+                    <div class="publication-header">
+                        <img src="image/icon/conf_icon/neurips.svg" alt="NeurIPS" class="conf-logo">
+                    </div>
+                    <div class="publication-body">
+                        <h3>DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models</h3>
+                        <div class="authors">Boxin Wang, Weixin Chen, Hengzhi Pei, Chulin Xie, Mintong Kang, Chenhui Zhang, Chejian Xu, Zidi Xiong, Ritik Dutta, Rylan Schaeffer, Sang T. Truong, Simran Arora, Mantas Mazeika, Dan Hendrycks, Zinan Lin, Yu Cheng, Sanmi Koyejo, Dawn Song, Bo Li.</div>
+                        <div class="venue">NeurIPS 2023</div>
+                        <div class="links">
+                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
+                            <a href="#"><i class="fas fa-code"></i> Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Project Page</a>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Publication 3 -->
-                <div class="publication-card">
-                    <h3>Do the Rewards Justify the Means? Measuring Trade-Offs Between Rewards and Ethical Behavior</h3>
-                    <div class="authors">Alexander Pan, Chan Jun Shern, Andy Zou, Nathaniel Li, Steven Basart, et al.</div>
-                    <div class="venue">ICML 2023</div>
-                    <div class="links">
-                        <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
-                        <a href="#"><i class="fas fa-code"></i> Code</a>
-                        <a href="#"><i class="fas fa-external-link-alt"></i> Project Page</a>
-                    </div>
-                </div>
-                
-                <!-- Publication 4 -->
-                <div class="publication-card">
-                    <h3>Scaling Out-of-Distribution Detection for Real-World Settings</h3>
-                    <div class="authors">Dan Hendrycks, Steven Basart, Mantas Mazeika, Andy Zou, Joe Kwon, et al.</div>
-                    <div class="venue">ICML 2022</div>
-                    <div class="links">
-                        <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
-                        <a href="#"><i class="fas fa-code"></i> Code</a>
-                    </div>
-                </div>
-            </div>
             
             <div style="text-align: center; margin-top: 40px;">
                 <a href="publications.html" class="btn-secondary">View All Publications</a>

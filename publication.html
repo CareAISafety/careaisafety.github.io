@@ -1,0 +1,1017 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Publications | Center of Safe and Responsible AI</title>
+    <meta content="Research publications from the Center of Safe and Responsible AI (CARE)" name="description"/>
+    <meta property="og:title" content="Publications | Center of Safe and Responsible AI" />
+    <meta property="og:description" content="Research publications from the Center of Safe and Responsible AI (CARE)" />
+    
+    <!-- Favicon -->
+    <link href="image/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <link href="image/logo.png" rel="apple-touch-icon"/>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Inline styles -->
+    <style>
+        :root {
+            --primary-purple: #6A49A8;
+            --secondary-purple: #8A66DB;
+            --light-purple: #D1BCF5;
+            --dark-purple: #3B2A5A;
+            --white: #ffffff;
+            --black: #000000;
+            --light-gray: #f5f5f7;
+            --medium-gray: #e0e0e0;
+            --text-dark: #333333;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Nunito Sans', 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        /* Container styles */
+        .container-large {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--dark-purple), var(--primary-purple));
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 15px;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .logo .uiuc-logo {
+            height: 40px;
+            border-right: 1px solid rgba(255,255,255,0.3);
+            padding-right: 15px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--light-purple);
+        }
+        
+        .nav-menu a.btn {
+            background-color: var(--white);
+            color: var(--primary-purple);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        .nav-menu a.btn:hover {
+            background-color: var(--light-purple);
+            color: var(--dark-purple);
+        }
+        
+        /* Footer Styles */
+        .footer {
+            background-color: var(--dark-purple);
+            color: var(--white);
+            padding: 60px 40px 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--light-purple);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--light-purple);
+            color: var(--dark-purple);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Publications Page Specific Styles */
+        .publications-section {
+            padding: 60px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h1 {
+            font-size: 36px;
+            color: var(--dark-purple);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-dark);
+        }
+        
+        .publications-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        /* Sidebar Styles */
+        .publications-sidebar {
+            width: 280px;
+            flex-shrink: 0;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .publications-sidebar h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--dark-purple);
+        }
+        
+        .filter-group {
+            margin-bottom: 25px;
+        }
+        
+        .filter-options {
+            list-style: none;
+        }
+        
+        .filter-option {
+            margin-bottom: 12px;
+        }
+        
+        .filter-checkbox {
+            display: none;
+        }
+        
+        .filter-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+        
+        .filter-label:before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--medium-gray);
+            border-radius: 4px;
+            margin-right: 10px;
+            transition: all 0.2s ease;
+        }
+        
+        .filter-checkbox:checked + .filter-label:before {
+            background-color: var(--primary-purple);
+            border-color: var(--primary-purple);
+        }
+        
+        .filter-checkbox:checked + .filter-label:after {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 4px;
+            font-size: 12px;
+            color: var(--white);
+        }
+        
+        .reset-filters {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--primary-purple);
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        
+        /* Main Content Styles */
+        .publications-content {
+            flex: 1;
+        }
+        
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .content-title {
+            font-size: 24px;
+            color: var(--dark-purple);
+            margin-bottom: 5px;
+        }
+        
+        .publications-count {
+            color: var(--text-dark);
+            font-size: 15px;
+        }
+        
+        .sort-dropdown {
+            position: relative;
+        }
+        
+        .sort-button {
+            background-color: var(--white);
+            border: 1px solid var(--medium-gray);
+            border-radius: 6px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+        
+        .sort-options {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: var(--white);
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 150px;
+            z-index: 10;
+            display: none;
+        }
+        
+        .sort-options.active {
+            display: block;
+        }
+        
+        .sort-option {
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .sort-option:hover {
+            background-color: var(--light-gray);
+        }
+        
+        /* Publication Card Styles */
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .publication-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .publication-header {
+            background: linear-gradient(to right, var(--light-gray), #fff);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .publication-header .conf-logo {
+            height: 60px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        
+        .publication-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .publication-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--dark-purple);
+            line-height: 1.4;
+        }
+        
+        .publication-authors {
+            font-size: 14px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            font-weight: 700;
+            color: var(--primary-purple);
+        }
+        
+        .publication-venue-wrapper {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+        
+        .publication-venue {
+            display: inline-block;
+            background-color: var(--light-purple);
+            color: var(--dark-purple);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .publication-year {
+            color: var(--text-dark);
+            font-size: 14px;
+        }
+        
+        .publication-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .publication-tag {
+            background-color: rgba(106, 73, 168, 0.1);
+            color: var(--primary-purple);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .publication-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: auto;
+        }
+        
+        .publication-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-purple);
+            font-weight: 500;
+            text-decoration: none;
+            gap: 5px;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+        
+        .publication-link:hover {
+            color: var(--secondary-purple);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .publications-container {
+                flex-direction: column;
+            }
+            
+            .publications-sidebar {
+                width: 100%;
+                position: static;
+                margin-bottom: 30px;
+            }
+            
+            .publications-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .content-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .publications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="image/uiuc_logo.png" alt="UIUC" class="uiuc-logo">
+                <img src="image/care_full_text.png" alt="Center of Safe and Responsible AI">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html" class="btn">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Publications Section -->
+    <section class="publications-section">
+        <div class="container-large">
+            <div class="section-title">
+                <h1>CARE Publications</h1>
+                <p>Explore our research publications across various AI safety domains and conferences.</p>
+            </div>
+            
+            <div class="publications-container">
+                <!-- Sidebar -->
+                <aside class="publications-sidebar">
+                    <!-- Research Direction Filters -->
+                    <div class="filter-group">
+                        <h3>Research Direction</h3>
+                        <ul class="filter-options">
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-science" class="filter-checkbox" data-filter="Science">
+                                <label for="filter-science" class="filter-label">Science</label>
+                            </li>
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-data" class="filter-checkbox" data-filter="Data/Computing">
+                                <label for="filter-data" class="filter-label">Data/Computing</label>
+                            </li>
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-algorithms" class="filter-checkbox" data-filter="Algorithms">
+                                <label for="filter-algorithms" class="filter-label">Algorithms</label>
+                            </li>
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-medicine" class="filter-checkbox" data-filter="Medicine">
+                                <label for="filter-medicine" class="filter-label">Medicine</label>
+                            </li>
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-economics" class="filter-checkbox" data-filter="Economics">
+                                <label for="filter-economics" class="filter-label">Economics</label>
+                            </li>
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-law" class="filter-checkbox" data-filter="Law/Policy">
+                                <label for="filter-law" class="filter-label">Law/Policy</label>
+                            </li>
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-social" class="filter-checkbox" data-filter="Social Good">
+                                <label for="filter-social" class="filter-label">Social Good</label>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Year Filters -->
+                    <div class="filter-group">
+                        <h3>Year</h3>
+                        <ul class="filter-options">
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-2024" class="filter-checkbox" data-year="2024">
+                                <label for="filter-2024" class="filter-label">2024</label>
+                            </li>
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-2023" class="filter-checkbox" data-year="2023">
+                                <label for="filter-2023" class="filter-label">2023</label>
+                            </li>
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-2022" class="filter-checkbox" data-year="2022">
+                                <label for="filter-2022" class="filter-label">2022</label>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Venue Filters -->
+                    <div class="filter-group">
+                        <h3>Venue</h3>
+                        <ul class="filter-options">
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-neurips" class="filter-checkbox" data-venue="NeurIPS">
+                                <label for="filter-neurips" class="filter-label">NeurIPS</label>
+                            </li>
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-iclr" class="filter-checkbox" data-venue="ICLR">
+                                <label for="filter-iclr" class="filter-label">ICLR</label>
+                            </li>
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-icml" class="filter-checkbox" data-venue="ICML">
+                                <label for="filter-icml" class="filter-label">ICML</label>
+                            </li>
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-other" class="filter-checkbox" data-venue="Other">
+                                <label for="filter-other" class="filter-label">Other Venues</label>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <a class="reset-filters" id="reset-filters">Reset All Filters</a>
+                </aside>
+                
+                <!-- Main Content -->
+                <div class="publications-content">
+                    <div class="content-header">
+                        <div>
+                            <h2 class="content-title">All Publications</h2>
+                            <p class="publications-count"><span id="publication-count">4</span> publications</p>
+                        </div>
+                        <div class="sort-dropdown">
+                            <button class="sort-button">
+                                Sort by: <span id="current-sort">Latest</span> <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="sort-options">
+                                <div class="sort-option" data-sort="latest">Latest</div>
+                                <div class="sort-option" data-sort="oldest">Oldest</div>
+                                <div class="sort-option" data-sort="a-z">A-Z</div>
+                                <div class="sort-option" data-sort="z-a">Z-A</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Publications Grid -->
+                    <div class="publications-grid">
+                        <!-- DecodingTrust Paper -->
+                        <div class="publication-card" data-filters="Data/Computing,Social Good" data-year="2023" data-venue="NeurIPS">
+                            <div class="publication-header">
+                                <img src="image/icon/conf_icon/neurips.svg" alt="NeurIPS" class="conf-logo">
+                            </div>
+                            <div class="publication-body">
+                                <h3 class="publication-title">DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models</h3>
+                                <div class="publication-authors">
+                                    Boxin Wang, Weixin Chen, Hengzhi Pei, Chulin Xie, Mintong Kang, Chenhui Zhang, Chejian Xu, Zidi Xiong, Ritik Dutta, Rylan Schaeffer, Sang T. Truong, Simran Arora, Mantas Mazeika, Dan Hendrycks, Zinan Lin, Yu Cheng, Sanmi Koyejo, Dawn Song, Bo Li
+                                </div>
+                                <div class="publication-venue-wrapper">
+                                    <div class="publication-venue">NeurIPS</div>
+                                    <div class="publication-year">2023</div>
+                                </div>
+                                <div class="publication-tags">
+                                    <span class="publication-tag">Data/Computing</span>
+                                    <span class="publication-tag">Social Good</span>
+                                </div>
+                                <div class="publication-links">
+                                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                    <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
+                                    <a href="#" class="publication-link"><i class="fas fa-external-link-alt"></i> Project Page</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- MMDT Paper -->
+                        <div class="publication-card" data-filters="Data/Computing,Social Good" data-year="2024" data-venue="ICLR">
+                            <div class="publication-header">
+                                <img src="image/icon/conf_icon/iclr.svg" alt="ICLR" class="conf-logo">
+                            </div>
+                            <div class="publication-body">
+                                <h3 class="publication-title">MMDT: Decoding the Trustworthiness and Safety of Multimodal Foundation Models</h3>
+                                <div class="publication-authors">
+                                    Chejian Xu, Jiawei Zhang, Zhaorun Chen, Chulin Xie, Mintong Kang, Yujin Potter, Zhun Wang, Zhuowen Yuan, Alexander Xiong, Zidi Xiong, Chenhui Zhang, Lingzhi Yuan, Yi Zeng, Peiyang Xu, Chengquan Guo, Andy Zhou, Jeffrey Ziwei Tan, Xuandong Zhao, Francesco Pinto, Zhen Xiang, Yu Gai, Zinan Lin, Dan Hendrycks, Bo Li, Dawn Song
+                                </div>
+                                <div class="publication-venue-wrapper">
+                                    <div class="publication-venue">ICLR</div>
+                                    <div class="publication-year">2025</div>
+                                </div>
+                                <div class="publication-tags">
+                                    <span class="publication-tag">Data/Computing</span>
+                                    <span class="publication-tag">Social Good</span>
+                                </div>
+                                <div class="publication-links">
+                                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                    <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
+                                    <a href="#" class="publication-link"><i class="fas fa-external-link-alt"></i> Project Page</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- AIR-Bench Paper -->
+                        <div class="publication-card" data-filters="Data/Computing,Law/Policy,Social Good" data-year="2024" data-venue="ICLR">
+                            <div class="publication-header">
+                                <img src="image/icon/conf_icon/iclr.svg" alt="ICLR" class="conf-logo">
+                            </div>
+                            <div class="publication-body">
+                                <h3 class="publication-title">AIR-Bench 2024: A Safety Benchmark Based on Risk Categories from Regulations and Policies</h3>
+                                <div class="publication-authors">
+                                    Yi Zeng, Yu Yang, Andy Zhou, Jeffrey Ziwei Tan, Yuheng Tu, Yifan Mai, Kevin Klyman, Minzhou Pan, Ruoxi Jia, Dawn Song, Percy Liang, Bo Li
+                                </div>
+                                <div class="publication-venue-wrapper">
+                                    <div class="publication-venue">ICLR</div>
+                                    <div class="publication-year">2025</div>
+                                </div>
+                                <div class="publication-tags">
+                                    <span class="publication-tag">Data/Computing</span>
+                                    <span class="publication-tag">Law/Policy</span>
+                                    <span class="publication-tag">Social Good</span>
+                                </div>
+                                <div class="publication-links">
+                                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                    <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
+                                    <a href="#" class="publication-link"><i class="fas fa-external-link-alt"></i> Project Page</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div>
+                <div class="footer-logo">
+                    <img src="image/care_full_text_smaller_plain.png" alt="Center of Safe and Responsible AI" style="height: 45px; width: auto;">
+                </div>
+                <p>Empowering businesses with safe and secure AI solutions for a trustworthy future.</p>
+                <div class="social-links">
+                    <a href="#"><span>LI</span></a>
+                    <a href="#"><span>TW</span></a>
+                    <a href="#"><span>FB</span></a>
+                </div>
+            </div>
+            <div>
+                <h4>Solutions</h4>
+                <ul class="footer-links">
+                    <li><a href="#">AI Safety Evaluation</a></li>
+                    <li><a href="#">Security Guardrails</a></li>
+                    <li><a href="#">Secure Training</a></li>
+                    <li><a href="#">Risk Assessment</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Research</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Documentation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Your Company. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript for filters -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elements
+            const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
+            const resetFiltersBtn = document.getElementById('reset-filters');
+            const publicationCards = document.querySelectorAll('.publication-card');
+            const publicationCountElement = document.getElementById('publication-count');
+            const sortButton = document.querySelector('.sort-button');
+            const sortOptions = document.querySelector('.sort-options');
+            const sortOptionElements = document.querySelectorAll('.sort-option');
+            const currentSortElement = document.getElementById('current-sort');
+            
+            // Initialize publication count
+            updatePublicationCount();
+            
+            // State
+            let activeFilters = {
+                filters: [],
+                years: [],
+                venues: []
+            };
+            
+            let currentSort = 'latest';
+            
+            // Toggle sort dropdown
+            sortButton.addEventListener('click', function() {
+                sortOptions.classList.toggle('active');
+            });
+            
+            // Close sort dropdown when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.sort-dropdown')) {
+                    sortOptions.classList.remove('active');
+                }
+            });
+            
+            // Handle sort option selection
+            sortOptionElements.forEach(option => {
+                option.addEventListener('click', function() {
+                    const sortValue = this.getAttribute('data-sort');
+                    currentSortElement.textContent = this.textContent;
+                    currentSort = sortValue;
+                    sortOptions.classList.remove('active');
+                    sortPublications();
+                });
+            });
+            
+            // Filter publications based on checked filters
+            function filterPublications() {
+                let visibleCount = 0;
+                
+                publicationCards.forEach(card => {
+                    // Get data attributes safely with fallbacks to empty string
+                    const cardFiltersStr = card.getAttribute('data-filters') || '';
+                    const cardYear = card.getAttribute('data-year') || '';
+                    const cardVenue = card.getAttribute('data-venue') || '';
+                    
+                    const cardFilters = cardFiltersStr.split(',').map(f => f.trim());
+                    
+                    let shouldShow = true;
+                    
+                    // Check research direction filters
+                    if (activeFilters.filters.length > 0) {
+                        shouldShow = cardFilters.some(filter => 
+                            activeFilters.filters.includes(filter)
+                        );
+                    }
+                    
+                    // Check year filters
+                    if (shouldShow && activeFilters.years.length > 0) {
+                        shouldShow = activeFilters.years.includes(cardYear);
+                    }
+                    
+                    // Check venue filters
+                    if (shouldShow && activeFilters.venues.length > 0) {
+                        shouldShow = activeFilters.venues.includes(cardVenue);
+                    }
+                    
+                    // Show or hide the card
+                    if (shouldShow) {
+                        card.style.display = '';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Update the count
+                publicationCountElement.textContent = visibleCount;
+                
+                // After filtering, apply the current sort
+                sortPublications();
+            }
+            
+            // Update publication count
+            function updatePublicationCount() {
+                const visibleCards = Array.from(publicationCards).filter(card => 
+                    card.style.display !== 'none'
+                );
+                publicationCountElement.textContent = visibleCards.length;
+            }
+            
+            // Sort publications
+            function sortPublications() {
+                const publicationsGrid = document.querySelector('.publications-grid');
+                const cards = Array.from(publicationsGrid.children).filter(card => 
+                    card.style.display !== 'none'
+                );
+                
+                cards.sort(function(a, b) {
+                    const titleA = a.querySelector('.publication-title').textContent;
+                    const titleB = b.querySelector('.publication-title').textContent;
+                    const yearA = parseInt(a.getAttribute('data-year') || '0');
+                    const yearB = parseInt(b.getAttribute('data-year') || '0');
+                    
+                    switch (currentSort) {
+                        case 'latest':
+                            return yearB - yearA;
+                        case 'oldest':
+                            return yearA - yearB;
+                        case 'a-z':
+                            return titleA.localeCompare(titleB);
+                        case 'z-a':
+                            return titleB.localeCompare(titleA);
+                        default:
+                            return yearB - yearA;
+                    }
+                });
+                
+                // Remove all visible cards
+                cards.forEach(card => {
+                    if (publicationsGrid.contains(card)) {
+                        publicationsGrid.removeChild(card);
+                    }
+                });
+                
+                // Append sorted cards
+                cards.forEach(card => publicationsGrid.appendChild(card));
+            }
+            
+            // Handle filter changes
+            filterCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    // Determine filter type based on available data attributes
+                    if (this.hasAttribute('data-filter')) {
+                        if (this.checked) {
+                            activeFilters.filters.push(this.getAttribute('data-filter'));
+                        } else {
+                            const index = activeFilters.filters.indexOf(this.getAttribute('data-filter'));
+                            if (index > -1) {
+                                activeFilters.filters.splice(index, 1);
+                            }
+                        }
+                    } else if (this.hasAttribute('data-year')) {
+                        if (this.checked) {
+                            activeFilters.years.push(this.getAttribute('data-year'));
+                        } else {
+                            const index = activeFilters.years.indexOf(this.getAttribute('data-year'));
+                            if (index > -1) {
+                                activeFilters.years.splice(index, 1);
+                            }
+                        }
+                    } else if (this.hasAttribute('data-venue')) {
+                        if (this.checked) {
+                            activeFilters.venues.push(this.getAttribute('data-venue'));
+                        } else {
+                            const index = activeFilters.venues.indexOf(this.getAttribute('data-venue'));
+                            if (index > -1) {
+                                activeFilters.venues.splice(index, 1);
+                            }
+                        }
+                    }
+                    
+                    // Apply filters after change
+                    filterPublications();
+                });
+            });
+            
+            // Reset filters
+            resetFiltersBtn.addEventListener('click', function() {
+                // Uncheck all checkboxes
+                filterCheckboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                
+                // Reset active filters
+                activeFilters = {
+                    filters: [],
+                    years: [],
+                    venues: []
+                };
+                
+                filterPublications();
+            });
+            
+            // Initial sort
+            sortPublications();
+            
+            // Debug - log the filter checkboxes to console
+            console.log('Filter checkboxes:', filterCheckboxes.length);
+            filterCheckboxes.forEach(cb => {
+                console.log(`Checkbox: ${cb.getAttribute('data-filter-type')} - ${cb.getAttribute('data-filter-value')}`);
+            });
+        });
+    </script>
+</body>
+</html>
