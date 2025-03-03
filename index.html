@@ -700,130 +700,152 @@
 
         /* Newsletter Section Styles */
         .newsletter-section {
-            position: relative;
             padding: 80px 20px;
             background-color: #f8f9fa;
-            overflow: hidden;
         }
 
-        .newsletter-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1;
-        }
-
-        .blob-4 {
-            position: absolute;
-            width: 50vw;
-            height: 50vw;
-            background: radial-gradient(circle, rgba(126, 87, 194, 0.2) 0%, rgba(74, 30, 140, 0.05) 70%);
-            bottom: -25%;
-            left: -15%;
-            border-radius: 50%;
-            filter: blur(50px);
-            opacity: 0.7;
-        }
-
-        .geometric-pattern-light {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                linear-gradient(to right, rgba(126, 87, 194, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(126, 87, 194, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-            opacity: 0.4;
+        .newsletter-heading {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 30px;
         }
 
         .newsletter-container {
-            position: relative;
-            z-index: 2;
             display: flex;
-            flex-wrap: wrap;
             gap: 40px;
-            max-width: 1100px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            padding: 40px;
+            max-width: 1000px;
         }
 
-        .newsletter-content {
-            flex: 3;
-            min-width: 300px;
+        .newsletter-form-container {
+            flex: 1;
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .form-subscribe {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .subscribe-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px 0 0 4px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .subscribe-input::placeholder {
+            color: #aaa;
+        }
+
+        .subscribe-button {
+            background-color: var(--primary-purple);
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            padding: 12px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .subscribe-button:hover {
+            background-color: var(--secondary-purple);
+        }
+
+        .privacy-text {
+            font-size: 13px;
+            color: #888;
+            line-height: 1.5;
+        }
+
+        .privacy-link {
+            color: #888;
+            text-decoration: underline;
+        }
+
+        .privacy-link:hover {
+            color: var(--primary-purple);
+        }
+
+        .substack-logo {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+        }
+
+        .substack-logo img {
+            height: 20px;
+            opacity: 0.5;
         }
 
         .newsletter-sidebar {
-            flex: 1;
-            min-width: 250px;
+            width: 300px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
         }
 
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #4a1e8c;
+        .sidebar-block {
             margin-bottom: 20px;
         }
 
-        .substack-embed-wrapper {
-            width: 100%;
-            margin-top: 20px;
+        .sidebar-text {
+            font-size: 15px;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 5px;
         }
 
-        .newsletter-info-card {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #4a1e8c;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .newsletter-info-card h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #4a1e8c;
-        }
-
-        .donate-link {
-            display: inline-block;
-            margin-top: 5px;
-            color: #4a1e8c;
-            font-weight: 600;
-            text-decoration: underline;
-            transition: color 0.3s;
-        }
-
-        .donate-link:hover {
-            color: #7e57c2;
-        }
-
-        .text-link {
-            color: #4a1e8c;
+        .sidebar-link {
+            color: var(--primary-purple);
             text-decoration: underline;
             font-weight: 500;
         }
 
-        .text-link:hover {
-            color: #7e57c2;
+        .sidebar-link:hover {
+            color: var(--secondary-purple);
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 20px 0;
         }
 
         @media (max-width: 768px) {
             .newsletter-container {
-                padding: 30px 20px;
+                flex-direction: column;
             }
             
-            .section-title {
-                font-size: 1.8rem;
+            .newsletter-sidebar {
+                width: 100%;
+                margin-top: 30px;
+            }
+            
+            .form-subscribe {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .subscribe-input {
+                border-radius: 4px;
+            }
+            
+            .subscribe-button {
+                border-radius: 4px;
+                width: 100%;
+            }
+            
+            .substack-logo {
+                position: static;
+                margin-top: 20px;
+                text-align: right;
             }
         }
     </style>
@@ -1021,29 +1043,36 @@
     </section>
 
     <!-- Newsletter Subscription Section -->
-    <section class="newsletter-section" id="newsletter">
-        <div class="newsletter-background">
-            <div class="blob blob-4"></div>
-            <div class="geometric-pattern-light"></div>
-        </div>
+    <section class="newsletter-section" id="subscribe">
         <div class="container-large">
+            <h2 class="newsletter-heading">Subscribe to the AI Safety Newsletter</h2>
+            
             <div class="newsletter-container">
-                <div class="newsletter-content">
-                    <h2 class="section-title">Subscribe to the AI Safety Newsletter</h2>
-                    <div class="newsletter-form-container">
-                        <!-- Styled Substack Embed -->
-                        <div class="substack-embed-wrapper">
-                            <iframe src="https://careaisafety.substack.com/embed" width="480" height="150" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-                        </div>
+                <div class="newsletter-form-container">
+                    <form action="https://careaisafe.substack.com/api/v1/free" method="post" class="form-subscribe">
+                        <input type="email" name="email" placeholder="Type your email..." required class="subscribe-input">
+                        <button type="submit" class="subscribe-button">Subscribe</button>
+                    </form>
+                    <p class="privacy-text">
+                        By subscribing you agree to <a href="https://substack.com/terms" target="_blank" class="privacy-link">Substack's Terms of Use</a>, 
+                        <a href="https://substack.com/privacy" target="_blank" class="privacy-link">our Privacy Policy</a> and 
+                        <a href="https://substack.com/privacy#information-collection-notice" target="_blank" class="privacy-link">our Information collection notice</a>
+                    </p>
+                    <div class="substack-logo">
+                        <a href="https://substack.com" target="_blank">
+                            <img src="https://substackcdn.com/image/fetch/w_80,h_80,c_fill,f_svg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Fimg%2Fsubstack-watermark.svg" alt="Substack">
+                        </a>
                     </div>
                 </div>
+                
                 <div class="newsletter-sidebar">
-                    <div class="newsletter-info-card">
-                        <h3>Want to help reduce risks from AI?</h3>
-                        <a href="donate.html" class="donate-link">Donate to support our mission</a>
+                    <div class="sidebar-block">
+                        <p class="sidebar-text"><strong>Want to help reduce risks from AI?</strong></p>
+                        <a href="donate.html" class="sidebar-link">Donate to support our mission</a>
                     </div>
-                    <div class="newsletter-info-card">
-                        <p>No technical background required. See <a href="https://careaisafe.substack.com" target="_blank" class="text-link">past newsletters</a>.</p>
+                    <div class="sidebar-divider"></div>
+                    <div class="sidebar-block">
+                        <p class="sidebar-text">No technical background required. See <a href="https://careaisafe.substack.com" target="_blank" class="sidebar-link">past newsletters</a>.</p>
                     </div>
                 </div>
             </div>
