@@ -697,6 +697,185 @@
                 height: 40px;
             }
         }
+
+        /* Newsletter Section Styles */
+        .newsletter-section {
+            position: relative;
+            padding: 80px 20px;
+            background-color: #f8f9fa;
+            overflow: hidden;
+        }
+
+        .newsletter-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .blob-4 {
+            position: absolute;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(126, 87, 194, 0.2) 0%, rgba(74, 30, 140, 0.05) 70%);
+            bottom: -25%;
+            left: -15%;
+            border-radius: 50%;
+            filter: blur(50px);
+            opacity: 0.7;
+        }
+
+        .geometric-pattern-light {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(to right, rgba(126, 87, 194, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(126, 87, 194, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.4;
+        }
+
+        .newsletter-container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        .newsletter-content {
+            flex: 1 1 500px;
+        }
+
+        .newsletter-sidebar {
+            flex: 1 1 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #4a1e8c;
+            margin-bottom: 30px;
+        }
+
+        .newsletter-form-container {
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-input {
+            flex: 1 1 250px;
+            padding: 14px 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .newsletter-input:focus {
+            border-color: #7e57c2;
+            box-shadow: 0 0 0 2px rgba(126, 87, 194, 0.2);
+        }
+
+        .subscribe-button {
+            flex: 0 0 auto;
+            padding: 14px 25px;
+            background-color: #4a1e8c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .subscribe-button:hover {
+            background-color: #7e57c2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(126, 87, 194, 0.3);
+        }
+
+        .newsletter-disclaimer {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .newsletter-disclaimer a {
+            color: #4a1e8c;
+            text-decoration: underline;
+        }
+
+        .newsletter-info-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4a1e8c;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .newsletter-info-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #4a1e8c;
+        }
+
+        .donate-link {
+            display: inline-block;
+            margin-top: 5px;
+            color: #4a1e8c;
+            font-weight: 600;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+
+        .donate-link:hover {
+            color: #7e57c2;
+        }
+
+        .text-link {
+            color: #4a1e8c;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        .text-link:hover {
+            color: #7e57c2;
+        }
+
+        @media (max-width: 768px) {
+            .newsletter-container {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -881,6 +1060,43 @@
                     <a href="https://www.openphilanthropy.org/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center;">
                         <img src="image/logo/op.jpg" alt="Open Philanthropy" style="max-height: 60px; width: auto;">
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-background">
+            <div class="blob blob-4"></div>
+            <div class="geometric-pattern-light"></div>
+        </div>
+        <div class="container-large">
+            <div class="newsletter-container">
+                <div class="newsletter-content">
+                    <h2 class="section-title">Subscribe to the CARE AI Safety Newsletter</h2>
+                    <div class="newsletter-form-container">
+                        <!-- Substack Embed Form -->
+                        <div id="custom-substack-embed">
+                            <form action="https://substack.com/api/v1/free_subscriber/careaisafe" method="post" class="newsletter-form">
+                                <input type="email" name="email" placeholder="Type your email..." required class="newsletter-input">
+                                <button type="submit" class="subscribe-button">Subscribe</button>
+                            </form>
+                            <p class="newsletter-disclaimer">
+                                By subscribing you agree to Substack's <a href="https://substack.com/tos" target="_blank" rel="noopener">Terms of Use</a>, our 
+                                <a href="https://substack.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and our <a href="https://substack.com/ccpa" target="_blank" rel="noopener">Information Collection Notice</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="newsletter-sidebar">
+                    <div class="newsletter-info-card">
+                        <h3>Want to help reduce risks from AI?</h3>
+                        <a href="donate.html" class="donate-link">Donate to support our mission</a>
+                    </div>
+                    <div class="newsletter-info-card">
+                        <p>No technical background required. See <a href="#" class="text-link">past newsletters</a>.</p>
+                    </div>
                 </div>
             </div>
         </div>
