@@ -1,147 +1,509 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-US">
 <head>
-    <meta charset="utf-8"/>
-    <title>Our Research | Center for Safe and Responsible AI (CARE)</title>
-    <meta content="Research areas and projects at the Center for Safe and Responsible AI." name="description"/>
-    <meta content="Our Research | Center for Safe and Responsible AI (CARE)" property="og:title"/>
-    <meta content="Research areas and projects at the Center for Safe and Responsible AI." property="og:description"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Research | Center of Safe and Responsible AI</title>
+    <meta content="Research initiatives and directions at the Center of Safe and Responsible AI (CARE)" name="description"/>
+    <meta property="og:title" content="Research | Center of Safe and Responsible AI" />
+    <meta property="og:description" content="Research initiatives and directions at the Center of Safe and Responsible AI (CARE)" />
     
-    <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
-    <link href="images/logo.png" rel="apple-touch-icon"/>
-    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    <!-- Favicon -->
+    <link href="image/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <link href="image/logo.png" rel="apple-touch-icon"/>
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Inline styles (same as index.html) -->
+    <style>
+        :root {
+            --primary-purple: #6A49A8;
+            --secondary-purple: #8A66DB;
+            --light-purple: #D1BCF5;
+            --dark-purple: #3B2A5A;
+            --white: #ffffff;
+            --black: #000000;
+            --light-gray: #f5f5f7;
+            --medium-gray: #e0e0e0;
+            --text-dark: #333333;
+        }
+        
+        /* Additional styles for the research page */
+        .research-hero {
+            background: linear-gradient(rgba(59, 42, 90, 0.85), rgba(106, 73, 168, 0.9)), url('image/research-hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            color: var(--white);
+            position: relative;
+        }
+        
+        .research-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .research-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .research-hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .research-directions {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .direction-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .direction-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .direction-card .icon {
+            font-size: 36px;
+            color: var(--primary-purple);
+            margin-bottom: 20px;
+        }
+        
+        .direction-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--dark-purple);
+            font-weight: 600;
+        }
+        
+        .direction-card p {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        
+        .direction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark-purple);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-dark);
+        }
+        
+        .publications {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .publication-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .publication-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .publication-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--dark-purple);
+        }
+        
+        .publication-card .authors {
+            font-size: 15px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        
+        .publication-card .venue {
+            display: inline-block;
+            background-color: var(--light-purple);
+            color: var(--dark-purple);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .publication-card .links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: var(--primary-purple);
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        .publication-card .links a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 16px;
+        }
+        
+        .breadcrumb span {
+            margin: 0 10px;
+            color: var(--white);
+        }
+        
+        .direction-partners {
+            margin-top: 10px;
+            font-style: italic;
+            color: var(--text-dark);
+            font-size: 14px;
+        }
+        
+        .view-more {
+            display: inline-block;
+            color: var(--primary-purple);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .view-more:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <!-- Top Navigation (same as index.html) -->
-    <nav class="nav-container">
-        <div class="nav-wrapper">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="CARE Logo" class="nav-logo"/>
-                </a>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="image/care_full_text_smaller_plain.png" alt="Center of Safe and Responsible AI" style="height: 40px; width: auto;">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="active">Research <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="research.html" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <img src="image/icon/research.png" alt="Overview">
+                                </div>
+                                <div class="dropdown-content">
+                                    <h4>Overview</h4>
+                                    <p>Learn about our research vision and approach</p>
+                                </div>
+                            </a>
+                            <a href="research.html#projects" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <img src="image/icon/projects.png" alt="Projects">
+                                </div>
+                                <div class="dropdown-content">
+                                    <h4>Projects</h4>
+                                    <p>Explore our current research initiatives</p>
+                                </div>
+                            </a>
+                            <a href="publications.html" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <img src="image/icon/publication.png" alt="Publications">
+                                </div>
+                                <div class="dropdown-content">
+                                    <h4>Publications</h4>
+                                    <p>Browse our research papers and articles</p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn-secondary">Join Us</a>
+                <a href="#" class="btn-primary">Support Our Work</a>
             </div>
-            <div class="nav-links">
-                <a href="about.html">About us</a>
-                <a href="research.html" class="active">Our work</a>
-                <a href="ai-risk.html">AI Risk</a>
-                <a href="resources.html">Resources</a>
-                <a href="contact.html">Contact</a>
-                <a href="careers.html" class="button button-outline">Careers</a>
-                <a href="donate.html" class="button button-filled">Donate</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Newsletter Banner (same as index.html) -->
-    <div class="newsletter-banner">
-        <div class="container-large">
-            <p>Get insights on the latest developments in AI delivered to your inbox <span class="arrow-icon">→</span></p>
-        </div>
-    </div>
-
-    <!-- Page Header -->
-    <header class="page-header">
-        <div class="container-large">
-            <h1>Our Research</h1>
-            <p class="header-description">Exploring the frontiers of safe and responsible AI development</p>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Research Areas -->
-        <section class="research-areas-section" id="science">
-            <div class="container-large">
-                <h2 class="section-heading">AI Safety + Science</h2>
-                <div class="research-content">
-                    <div class="research-text">
-                        <p>We aim to build a unified red teaming/evaluation platform for AI4Science models, in collaboration with Lawrence Livermore National Lab, SAND, Open Philanthropy, and the Center of AI Safety.</p>
-                        <p>This effort will be joined with the trillion parameter consortium (TPC), which aims to train large language models for science data. Our project will enable safety evaluations for these models, such as whether an LLM might provide procedures to generate controlled chemical substances.</p>
-                        <ul class="research-highlights">
-                            <li>Safety evaluations for large-scale scientific models</li>
-                            <li>Prevention of misuse in chemistry and biology</li>
-                            <li>Collaborative research with national laboratories</li>
-                        </ul>
+    <!-- Research Hero Section -->
+    <section class="research-hero">
+        <div class="container-large">
+            <div class="research-hero-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <a href="research.html">Research</a>
+                </div>
+                <h1>Our Research Directions</h1>
+                <p>The Center for Safe and Responsible AI (CARE) conducts cutting-edge research across seven key directions to ensure AI systems are designed and used safely, reliably, and beneficially for humanity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Directions Section -->
+    <section class="research-directions">
+        <div class="container-large">
+            <div class="section-title">
+                <h2>Seven Key Research Directions</h2>
+                <p>Our interdisciplinary approach brings together experts from various fields to address the complex challenges of creating safe and responsible AI systems.</p>
+            </div>
+            
+            <div class="direction-grid">
+                <!-- Direction 1 -->
+                <div class="direction-card">
+                    <div class="icon">
+                        <i class="fas fa-flask"></i>
                     </div>
-                    <div class="research-image">
-                        <img src="images/research/science.jpg" alt="AI Safety + Science">
+                    <h3>AI Safety + Science</h3>
+                    <p>Developing safety protocols and evaluation methods for AI systems used in scientific research, with a focus on preventing misuse while enabling beneficial applications in chemistry, biology, and materials science.</p>
+                    <div class="direction-partners">
+                        <strong>Partners:</strong> Lawrence Livermore National Lab, Center for AI Safety
+                    </div>
+                    <a href="#" class="view-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Direction 2 -->
+                <div class="direction-card">
+                    <div class="icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>AI Safety + Data/Computing</h3>
+                    <p>Creating infrastructure for secure data collection, efficient model training, and thorough evaluation of AI systems, ensuring that computational resources are used responsibly and safely across the AI development pipeline.</p>
+                    <div class="direction-partners">
+                        <strong>Partners:</strong> National Center for Supercomputing Applications, Cloud Providers
+                    </div>
+                    <a href="#" class="view-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Direction 3 -->
+                <div class="direction-card">
+                    <div class="icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>AI Safety + Algorithms/Theoretical Foundations</h3>
+                    <p>Advancing the theoretical foundations of AI safety through novel algorithms, formal verification methods, and robust optimization techniques that provide guarantees about AI system behavior and performance.</p>
+                    <div class="direction-partners">
+                        <strong>Partners:</strong> UIUC Computer Science Department, MIT CSAIL
+                    </div>
+                    <a href="#" class="view-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Direction 4 -->
+                <div class="direction-card">
+                    <div class="icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>AI Safety + Medicine/Healthcare</h3>
+                    <p>Creating robust safety mechanisms for AI systems deployed in healthcare settings, ensuring they provide reliable, unbiased recommendations while maintaining patient privacy and adhering to medical ethics.</p>
+                    <div class="direction-partners">
+                        <strong>Partners:</strong> UIUC Medical School, Healthcare Industry Partners
+                    </div>
+                    <a href="#" class="view-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Direction 5 -->
+                <div class="direction-card">
+                    <div class="icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>AI Safety + Economics</h3>
+                    <p>Analyzing the economic implications of widespread AI deployment, with a focus on developing sustainable economic models that promote innovation while protecting workers and creative professionals.</p>
+                    <div class="direction-partners">
+                        <strong>Partners:</strong> Berkeley HAAS School of Business, Economic Policy Institute
+                    </div>
+                    <a href="#" class="view-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Direction 6 -->
+                <div class="direction-card">
+                    <div class="icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>AI Safety + Law/Policy</h3>
+                    <p>Developing policy frameworks and regulatory approaches that balance innovation with safety, addressing questions of liability, accountability, and governance for increasingly capable AI systems.</p>
+                    <div class="direction-partners">
+                        <strong>Partners:</strong> Stanford Center for Legal Informatics, Georgetown Law
+                    </div>
+                    <a href="#" class="view-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Direction 7 -->
+                <div class="direction-card">
+                    <div class="icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>AI Safety + Social Good</h3>
+                    <p>Harnessing AI for positive social impact while ensuring safety and equity, focusing on applications that address global challenges like climate change, public health, and education access.</p>
+                    <div class="direction-partners">
+                        <strong>Partners:</strong> UN AI for Good, Partnership on AI
+                    </div>
+                    <a href="#" class="view-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="publications" id="publications">
+        <div class="container-large">
+            <div class="section-title">
+                <h2>Recent Publications</h2>
+                <p>Our researchers are actively publishing their findings in top-tier academic conferences and journals. Explore our recent publications below.</p>
+            </div>
+            
+            <div class="publications-list">
+                <!-- Publication 1 -->
+                <div class="publication-card">
+                    <h3>DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models</h3>
+                    <div class="authors">Boxin Wang, Weixin Chen, Hengzhi Pei, Chulin Xie, Mintong Kang, Chenhui Zhang, et al.</div>
+                    <div class="venue">NeurIPS 2023</div>
+                    <div class="links">
+                        <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
+                        <a href="#"><i class="fas fa-code"></i> Code</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Project Page</a>
+                    </div>
+                </div>
+                
+                <!-- Publication 2 -->
+                <div class="publication-card">
+                    <h3>Representation Engineering: A Top-Down Approach to AI Transparency</h3>
+                    <div class="authors">Andy Zou, Long Phan, Sarah Chen, James Campbell, Phillip Guo, Richard Ren, et al.</div>
+                    <div class="venue">ArXiv Preprint</div>
+                    <div class="links">
+                        <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
+                        <a href="#"><i class="fas fa-code"></i> Code</a>
+                    </div>
+                </div>
+                
+                <!-- Publication 3 -->
+                <div class="publication-card">
+                    <h3>Do the Rewards Justify the Means? Measuring Trade-Offs Between Rewards and Ethical Behavior</h3>
+                    <div class="authors">Alexander Pan, Chan Jun Shern, Andy Zou, Nathaniel Li, Steven Basart, et al.</div>
+                    <div class="venue">ICML 2023</div>
+                    <div class="links">
+                        <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
+                        <a href="#"><i class="fas fa-code"></i> Code</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Project Page</a>
+                    </div>
+                </div>
+                
+                <!-- Publication 4 -->
+                <div class="publication-card">
+                    <h3>Scaling Out-of-Distribution Detection for Real-World Settings</h3>
+                    <div class="authors">Dan Hendrycks, Steven Basart, Mantas Mazeika, Andy Zou, Joe Kwon, et al.</div>
+                    <div class="venue">ICML 2022</div>
+                    <div class="links">
+                        <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
+                        <a href="#"><i class="fas fa-code"></i> Code</a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="research-areas-section" id="healthcare">
-            <div class="container-large">
-                <h2 class="section-heading">AI Safety + Healthcare</h2>
-                <div class="research-content reverse">
-                    <div class="research-text">
-                        <p>This research direction aims to optimize trustworthy models built for predictions and recommendations in medicine and healthcare.</p>
-                        <p>We ensure model transparency and interoperability to ground the predictions in this safety-critical domain. Our work focuses on developing AI systems that can provide reliable medical insights while maintaining patient privacy and adhering to ethical guidelines.</p>
-                        <ul class="research-highlights">
-                            <li>Trustworthy and explainable AI for medical diagnosis</li>
-                            <li>Privacy-preserving healthcare analytics</li>
-                            <li>Bias mitigation in clinical decision support systems</li>
-                        </ul>
-                    </div>
-                    <div class="research-image">
-                        <img src="images/research/healthcare.jpg" alt="AI Safety + Healthcare">
-                    </div>
-                </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="publications.html" class="btn-secondary">View All Publications</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="research-areas-section" id="economics">
-            <div class="container-large">
-                <h2 class="section-heading">AI Safety + Economics</h2>
-                <div class="research-content">
-                    <div class="research-text">
-                        <p>We propose novel mechanism designs and risk assessments for the usage of AI in economic activities.</p>
-                        <p>As generative AIs increasingly master content creation, we investigate how this power will influence humans' content creation and art production. We aim to ensure symbiosis between human creativity and AI creativity, and to design appropriate content creator incentives to induce desirable human content creation.</p>
-                        <ul class="research-highlights">
-                            <li>Economic value assessment of data for ML models</li>
-                            <li>Incentive mechanisms for human-AI creative collaboration</li>
-                            <li>Market design for AI-generated content</li>
-                        </ul>
-                    </div>
-                    <div class="research-image">
-                        <img src="images/research/economics.jpg" alt="AI Safety + Economics">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Current Projects -->
-        <section class="projects-section">
-            <div class="container-large">
-                <h2 class="section-heading">Current Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>DecodingTrust Platform</h3>
-                        <p>An integrated platform for evaluating the safety and trustworthiness of language models, winner of the Best Paper Award at NeurIPS'23.</p>
-                        <p class="project-partners">Partners: Amazon, eBay</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>Safety Evaluation Framework</h3>
-                        <p>A comprehensive framework for assessing AI safety across multiple dimensions, including reliability, security, and alignment.</p>
-                        <p class="project-partners">Partners: MLCommons, Open Philanthropy</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>Ethical Medical AI</h3>
-                        <p>Developing guidelines and technical solutions for ensuring ethical considerations in medical AI applications.</p>
-                        <p class="project-partners">Partners: UIUC Medical School</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer (same as index.html) -->
+    <!-- Footer -->
     <footer class="footer">
-        <!-- Footer content -->
+        <div class="footer-container">
+            <div>
+                <div class="footer-logo">
+                    <img src="image/care_full_text_smaller_plain.png" alt="Center of Safe and Responsible AI" style="height: 45px; width: auto;">
+                </div>
+                <p>Empowering businesses with safe and secure AI solutions for a trustworthy future.</p>
+                <div class="social-links">
+                    <a href="#"><span>LI</span></a>
+                    <a href="#"><span>TW</span></a>
+                    <a href="#"><span>FB</span></a>
+                </div>
+            </div>
+            <div>
+                <h4>Solutions</h4>
+                <ul class="footer-links">
+                    <li><a href="#">AI Safety Evaluation</a></li>
+                    <li><a href="#">Security Guardrails</a></li>
+                    <li><a href="#">Secure Training</a></li>
+                    <li><a href="#">Risk Assessment</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Documentation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Center for Safe and Responsible AI. All Rights Reserved.
+        </div>
     </footer>
 </body>
-</html> 
+</html>
