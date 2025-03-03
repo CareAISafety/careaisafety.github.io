@@ -326,34 +326,43 @@
         
         /* Additional styles for the research page */
         .research-hero {
-            background: linear-gradient(rgba(59, 42, 90, 0.85), rgba(106, 73, 168, 0.9)), url('image/research-hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
             color: var(--white);
+            padding: 80px 0 60px;
             position: relative;
+            overflow: hidden;
+        }
+        
+        .research-hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url('image/pattern.svg');
+            background-size: cover;
+            opacity: 0.1;
         }
         
         .research-hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
             position: relative;
-            z-index: 2;
+            z-index: 1;
+            max-width: 800px;
         }
         
         .research-hero h1 {
             font-size: 48px;
-            margin-bottom: 20px;
             font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
         
         .research-hero p {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 30px;
             max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            opacity: 0.9;
         }
         
         .research-directions {
@@ -611,7 +620,38 @@
             </a>
             <ul class="nav-menu">
                 <li><a href="index.html">About</a></li>
-                <li><a href="event.html">Event</a></li>
+                <li class="dropdown">
+                    <a href="community.html" class="dropdown-toggle">Community <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown-menu">
+                        <a href="community.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/community_overview.webp" alt="Overview">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>CARE Community</h4>
+                                <p>Learn about our community and initiatives</p>
+                            </div>
+                        </a>
+                        <a href="event.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/event.webp" alt="Events">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Recent Events</h4>
+                                <p>Conferences, workshops and seminars</p>
+                            </div>
+                        </a>
+                        <a href="community.html#programs" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/program.png" alt="Programs">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Programs</h4>
+                                <p>Our mentorship and outreach initiatives</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
                 <li class="dropdown">
                     <a href="research.html" class="dropdown-toggle">Research <span class="dropdown-arrow">▼</span></a>
                     <div class="dropdown-menu">
@@ -620,7 +660,7 @@
                                 <img src="image/icon/research.png" alt="Overview">
                             </div>
                             <div class="dropdown-content">
-                                <h4>Overview</h4>
+                                <h4>Research Overview</h4>
                                 <p>Learn about our research vision and approach</p>
                             </div>
                         </a>
@@ -654,11 +694,6 @@
     <section class="research-hero">
         <div class="container-large">
             <div class="research-hero-content">
-                <div class="breadcrumb">
-                    <a href="index.html">Home</a>
-                    <span>/</span>
-                    <a href="research.html">Research</a>
-                </div>
                 <h1>Research Overview</h1>
                 <p>CARE conducts cutting-edge research across seven key directions to ensure AI systems are designed and used safely, reliably, and beneficially for humanity.</p>
             </div>
