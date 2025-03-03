@@ -22,7 +22,7 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <!-- Inline styles (same as index.html) -->
+    <!-- Inline styles (including base styles from index.html) -->
     <style>
         :root {
             --primary-purple: #6A49A8;
@@ -34,6 +34,294 @@
             --light-gray: #f5f5f7;
             --medium-gray: #e0e0e0;
             --text-dark: #333333;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Nunito Sans', 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        /* Container styles */
+        .container-large {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--dark-purple), var(--primary-purple));
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 15px;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .logo .uiuc-logo {
+            height: 40px;
+            border-right: 1px solid rgba(255,255,255,0.3);
+            padding-right: 15px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--light-purple);
+        }
+        
+        .nav-menu a.btn {
+            background-color: var(--white);
+            color: var(--primary-purple);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        
+        .nav-menu a.btn:hover {
+            background-color: var(--light-purple);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Dropdown styles - horizontal with icons */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dropdown-arrow {
+            font-size: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background-color: white;
+            display: flex;
+            min-width: 800px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            margin-top: 15px;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+            margin: 0 10px;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(106, 73, 168, 0.05);
+        }
+
+        .dropdown-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(106, 73, 168, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .dropdown-icon img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+
+        .dropdown-content {
+            text-align: center;
+        }
+
+        .dropdown-content h4 {
+            color: var(--dark-purple);
+            font-size: 16px;
+            margin-bottom: 3px;
+        }
+
+        .dropdown-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.3;
+            margin: 0;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-purple);
+            color: var(--white);
+            padding: 70px 20px 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-container p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-purple);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--light-purple);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary-purple);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-purple);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
         }
         
         /* Additional styles for the research page */
@@ -222,60 +510,92 @@
         .view-more:hover {
             text-decoration: underline;
         }
+        
+        /* Button styles */
+        .btn-secondary {
+            display: inline-block;
+            background-color: var(--primary-purple);
+            color: var(--white);
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--secondary-purple);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+            
+            .dropdown-menu {
+                min-width: 90vw;
+                flex-direction: column;
+            }
+            
+            .direction-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .research-hero h1 {
+                font-size: 36px;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="header-container">
-            <a href="#" class="logo">
-                <img src="image/care_full_text_smaller_plain.png" alt="Center of Safe and Responsible AI" style="height: 40px; width: auto;">
+            <a href="index.html" class="logo">
+                <img src="image/uiuc_text_no_bg.png" alt="University of Illinois Urbana-Champaign" class="uiuc-logo">
+                <img src="image/care_full_text_smaller_plain.png" alt="Center of Safe and Responsible AI">
             </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="active">Research <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="research.html" class="dropdown-item">
-                                <div class="dropdown-icon">
-                                    <img src="image/icon/research.png" alt="Overview">
-                                </div>
-                                <div class="dropdown-content">
-                                    <h4>Overview</h4>
-                                    <p>Learn about our research vision and approach</p>
-                                </div>
-                            </a>
-                            <a href="research.html#projects" class="dropdown-item">
-                                <div class="dropdown-icon">
-                                    <img src="image/icon/projects.png" alt="Projects">
-                                </div>
-                                <div class="dropdown-content">
-                                    <h4>Projects</h4>
-                                    <p>Explore our current research initiatives</p>
-                                </div>
-                            </a>
-                            <a href="publications.html" class="dropdown-item">
-                                <div class="dropdown-icon">
-                                    <img src="image/icon/publication.png" alt="Publications">
-                                </div>
-                                <div class="dropdown-content">
-                                    <h4>Publications</h4>
-                                    <p>Browse our research papers and articles</p>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <a href="#" class="btn-secondary">Join Us</a>
-                <a href="#" class="btn-primary">Support Our Work</a>
-            </div>
+            <ul class="nav-menu">
+                <li><a href="about.html">About</a></li>
+                <li><a href="event.html">Event</a></li>
+                <li class="dropdown">
+                    <a href="research.html" class="dropdown-toggle">Research <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown-menu">
+                        <a href="research.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/research.png" alt="Overview">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Overview</h4>
+                                <p>Learn about our research vision and approach</p>
+                            </div>
+                        </a>
+                        <a href="research.html#projects" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/project.png" alt="Projects">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Our Projects</h4>
+                                <p>Explore our current research initiatives</p>
+                            </div>
+                        </a>
+                        <a href="publications.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/publication.png" alt="Publications">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Publications</h4>
+                                <p>Browse our research papers and articles</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html" class="btn">Contact Us</a></li>
+            </ul>
         </div>
     </header>
 
@@ -288,8 +608,8 @@
                     <span>/</span>
                     <a href="research.html">Research</a>
                 </div>
-                <h1>Our Research Directions</h1>
-                <p>The Center for Safe and Responsible AI (CARE) conducts cutting-edge research across seven key directions to ensure AI systems are designed and used safely, reliably, and beneficially for humanity.</p>
+                <h1>Research Overview</h1>
+                <p>CARE conducts cutting-edge research across seven key directions to ensure AI systems are designed and used safely, reliably, and beneficially for humanity.</p>
             </div>
         </div>
     </section>
@@ -297,7 +617,7 @@
     <!-- Research Directions Section -->
     <section class="research-directions">
         <div class="container-large">
-            <div class="section-title">
+            <div class="section-title" style="margin-left: 175px;">
                 <h2>Seven Key Research Directions</h2>
                 <p>Our interdisciplinary approach brings together experts from various fields to address the complex challenges of creating safe and responsible AI systems.</p>
             </div>
@@ -400,7 +720,7 @@
     <!-- Publications Section -->
     <section class="publications" id="publications">
         <div class="container-large">
-            <div class="section-title">
+            <div class="section-title" style="margin-left: 175px;">
                 <h2>Recent Publications</h2>
                 <p>Our researchers are actively publishing their findings in top-tier academic conferences and journals. Explore our recent publications below.</p>
             </div>
@@ -486,7 +806,7 @@
                 <h4>Resources</h4>
                 <ul class="footer-links">
                     <li><a href="#">Blog</a></li>
-                    <li><a href="research.html">Research</a></li>
+                    <li><a href="#">Research</a></li>
                     <li><a href="#">Case Studies</a></li>
                     <li><a href="#">Documentation</a></li>
                 </ul>
@@ -494,15 +814,15 @@
             <div>
                 <h4>Company</h4>
                 <ul class="footer-links">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="team.html">Team</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Team</a></li>
                     <li><a href="#">Careers</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </div>
         </div>
         <div class="copyright">
-            &copy; 2024 Center for Safe and Responsible AI. All Rights Reserved.
+            &copy; 2024 Your Company. All Rights Reserved.
         </div>
     </footer>
 </body>
