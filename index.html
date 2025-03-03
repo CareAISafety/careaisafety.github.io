@@ -319,44 +319,71 @@
         }
         
         .feature-card {
-            background-color: var(--light-gray);
-            border-radius: 10px;
+            background-color: var(--white);
+            border-radius: 12px;
             padding: 40px 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
-            border-bottom: 4px solid var(--primary-purple);
+            border-left: 4px solid var(--primary-purple);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 300px;
+            overflow: hidden;
         }
         
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.12);
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(106, 73, 168, 0.05), rgba(138, 102, 219, 0.1));
+            border-radius: 0 0 0 100%;
+            z-index: 0;
         }
         
         .feature-card h3 {
             font-size: 22px;
             margin-bottom: 15px;
             color: var(--dark-purple);
+            position: relative;
+            z-index: 1;
         }
         
         .feature-card p {
             color: #666;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            flex-grow: 1;
         }
         
         .card-icon {
-            width: 60px;
-            height: 60px;
-            background-color: rgba(106, 73, 168, 0.1);
-            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            background-color: rgba(106, 73, 168, 0.08);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(106, 73, 168, 0.1);
         }
         
         .card-icon img {
-            width: 32px;
-            height: 32px;
+            width: 38px;
+            height: 38px;
+            object-fit: contain;
         }
         
         .learn-more {
@@ -365,10 +392,24 @@
             font-weight: 600;
             display: inline-flex;
             align-items: center;
+            position: relative;
+            z-index: 1;
+            margin-top: auto;
+            transition: all 0.3s ease;
         }
         
         .learn-more:hover {
-            text-decoration: underline;
+            color: var(--secondary-purple);
+            transform: translateX(5px);
+        }
+        
+        .learn-more .arrow-icon {
+            margin-left: 6px;
+            transition: transform 0.3s ease;
+        }
+        
+        .learn-more:hover .arrow-icon {
+            transform: translateX(3px);
         }
         
         /* Quote Section */
@@ -912,7 +953,7 @@
         <div class="feature-grid">
             <div class="feature-card">
                 <div class="card-icon">
-                    <img src="image/icon-risk.svg" alt="Risk Assessment Icon">
+                    <img src="image/icon/evaluate.png" alt="Risk Assessment Icon">
                 </div>
                 <h3>Unified Risk Assessment</h3>
                 <p>Developing comprehensive evaluation algorithms and platforms for existing AI models and systems to identify potential safety issues.</p>
@@ -920,7 +961,7 @@
             </div>
             <div class="feature-card">
                 <div class="card-icon">
-                    <img src="image/icon-safety.svg" alt="Safety Enhancement Icon">
+                    <img src="image/icon/safety_enhancement.png" alt="Safety Enhancement Icon">
                 </div>
                 <h3>Safety Enhancement</h3>
                 <p>Creating innovative algorithms and models designed specifically to improve the safety of next-generation AI systems.</p>
@@ -928,7 +969,7 @@
             </div>
             <div class="feature-card">
                 <div class="card-icon">
-                    <img src="image/icon-theory.svg" alt="Theoretical Guarantees Icon">
+                    <img src="image/icon/theoretical.png" alt="Theoretical Guarantees Icon">
                 </div>
                 <h3>Theoretical Guarantees</h3>
                 <p>Establishing mathematical foundations and formal guarantees for AI safety, such as conformal risk upper bounds.</p>
