@@ -614,16 +614,16 @@
                         <h3>Year</h3>
                         <ul class="filter-options">
                             <li class="filter-option">
+                                <input type="checkbox" id="filter-2025" class="filter-checkbox" data-year="2025">
+                                <label for="filter-2025" class="filter-label">2025</label>
+                            </li>
+                            <li class="filter-option">
                                 <input type="checkbox" id="filter-2024" class="filter-checkbox" data-year="2024">
                                 <label for="filter-2024" class="filter-label">2024</label>
                             </li>
                             <li class="filter-option">
                                 <input type="checkbox" id="filter-2023" class="filter-checkbox" data-year="2023">
                                 <label for="filter-2023" class="filter-label">2023</label>
-                            </li>
-                            <li class="filter-option">
-                                <input type="checkbox" id="filter-2022" class="filter-checkbox" data-year="2022">
-                                <label for="filter-2022" class="filter-label">2022</label>
                             </li>
                         </ul>
                     </div>
@@ -676,32 +676,7 @@
                     
                     <!-- Publications Grid -->
                     <div class="publications-grid">
-                        <!-- DecodingTrust Paper -->
-                        <div class="publication-card" data-filters="Data/Computing,Social Good" data-year="2023" data-venue="NeurIPS">
-                            <div class="publication-header">
-                                <img src="image/icon/conf_icon/neurips.svg" alt="NeurIPS" class="conf-logo">
-                            </div>
-                            <div class="publication-body">
-                                <h3 class="publication-title">DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models</h3>
-                                <div class="publication-authors">
-                                    Boxin Wang, Weixin Chen, Hengzhi Pei, Chulin Xie, Mintong Kang, Chenhui Zhang, Chejian Xu, Zidi Xiong, Ritik Dutta, Rylan Schaeffer, Sang T. Truong, Simran Arora, Mantas Mazeika, Dan Hendrycks, Zinan Lin, Yu Cheng, Sanmi Koyejo, Dawn Song, Bo Li
-                                </div>
-                                <div class="publication-venue-wrapper">
-                                    <div class="publication-venue">NeurIPS</div>
-                                    <div class="publication-year">2023</div>
-                                </div>
-                                <div class="publication-tags">
-                                    <span class="publication-tag">Data/Computing</span>
-                                    <span class="publication-tag">Social Good</span>
-                                </div>
-                                <div class="publication-links">
-                                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
-                                    <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
-                                    <a href="#" class="publication-link"><i class="fas fa-external-link-alt"></i> Project Page</a>
-                                </div>
-                            </div>
-                        </div>
-                        
+
                         <!-- MMDT Paper -->
                         <div class="publication-card" data-filters="Data/Computing,Social Good" data-year="2024" data-venue="ICLR">
                             <div class="publication-header">
@@ -727,7 +702,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- AIR-Bench Paper -->
                         <div class="publication-card" data-filters="Data/Computing,Law/Policy,Social Good" data-year="2024" data-venue="ICLR">
                             <div class="publication-header">
@@ -745,6 +720,133 @@
                                 <div class="publication-tags">
                                     <span class="publication-tag">Data/Computing</span>
                                     <span class="publication-tag">Law/Policy</span>
+                                    <span class="publication-tag">Social Good</span>
+                                </div>
+                                <div class="publication-links">
+                                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                    <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
+                                    <a href="#" class="publication-link"><i class="fas fa-external-link-alt"></i> Project Page</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SafeWatch Paper -->
+                        <div class="publication-card" data-filters="Data/Computing,Algorithms,Law/Policy,Social Good" data-year="2024" data-venue="ICLR">
+                            <div class="publication-header">
+                                <img src="image/icon/conf_icon/iclr.svg" alt="ICLR" class="conf-logo">
+                            </div>
+                            <div class="publication-body">
+                                <h3 class="publication-title">SafeWatch: An Efficient Safety-Policy Following Video Guardrail Model with Transparent Explanations</h3>
+                                <div class="publication-authors">
+                                    Zhaorun Chen, Francesco Pinto, Minzhou Pan, <span class="highlight">Bo Li</span>
+                                </div>
+                                <div class="publication-venue-wrapper">
+                                    <div class="publication-venue">ICLR</div>
+                                    <div class="publication-year">2025</div>
+                                </div>
+                                <div class="publication-tags">
+                                    <span class="publication-tag">Data/Computing</span>
+                                    <span class="publication-tag">Algorithms</span>
+                                    <span class="publication-tag">Law/Policy</span>
+                                    <span class="publication-tag">Social Good</span>
+                                </div>
+                                <div class="publication-links">
+                                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                    <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- R2-Guard Paper -->
+                        <div class="publication-card" data-filters="Algorithms,Law/Policy,Social Good" data-year="2024" data-venue="ICLR">
+                            <div class="publication-header">
+                                <img src="image/icon/conf_icon/iclr.svg" alt="ICLR" class="conf-logo">
+                            </div>
+                            <div class="publication-body">
+                                <h3 class="publication-title">R2-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning</h3>
+                                <div class="publication-authors">
+                                    Mintong Kang, <span class="highlight">Bo Li</span>
+                                </div>
+                                <div class="publication-venue-wrapper">
+                                    <div class="publication-venue">ICLR</div>
+                                    <div class="publication-year">2025</div>
+                                </div>
+                                <div class="publication-tags">
+                                    <span class="publication-tag">Algorithms</span>
+                                    <span class="publication-tag">Law/Policy</span>
+                                    <span class="publication-tag">Social Good</span>
+                                </div>
+                                <div class="publication-links">
+                                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                    <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- AdvWave Paper -->
+                        <div class="publication-card" data-filters="Algorithms" data-year="2024" data-venue="ICLR">
+                            <div class="publication-header">
+                                <img src="image/icon/conf_icon/iclr.svg" alt="ICLR" class="conf-logo">
+                            </div>
+                            <div class="publication-body">
+                                <h3 class="publication-title">AdvWave: Stealthy Adversarial Jailbreak Attack against Large Audio-Language Models</h3>
+                                <div class="publication-authors">
+                                    Mintong Kang, Chejian Xu, <span class="highlight">Bo Li</span>
+                                </div>
+                                <div class="publication-venue-wrapper">
+                                    <div class="publication-venue">ICLR</div>
+                                    <div class="publication-year">2025</div>
+                                </div>
+                                <div class="publication-tags">
+                                    <span class="publication-tag">Algorithms</span>
+                                </div>
+                                <div class="publication-links">
+                                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                    <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- AgentPoison Paper -->
+                        <div class="publication-card" data-filters="Algorithms" data-year="2024" data-venue="NeurIPS">
+                            <div class="publication-header">
+                                <img src="image/icon/conf_icon/neurips.svg" alt="NeurIPS" class="conf-logo">
+                            </div>
+                            <div class="publication-body">
+                                <h3 class="publication-title">AgentPoison: Red-teaming LLM Agents via Poisoning Memory or Knowledge Bases</h3>
+                                <div class="publication-authors">
+                                    Zhaorun Chen, Zhen Xiang, Chaowei Xiao, Dawn Song, <span class="highlight">Bo Li</span>
+                                </div>
+                                <div class="publication-venue-wrapper">
+                                    <div class="publication-venue">NeurIPS</div>
+                                    <div class="publication-year">2024</div>
+                                </div>
+                                <div class="publication-tags">
+                                    <span class="publication-tag">Algorithms</span>
+                                </div>
+                                <div class="publication-links">
+                                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                    <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- DecodingTrust Paper -->
+                        <div class="publication-card" data-filters="Data/Computing,Social Good" data-year="2023" data-venue="NeurIPS">
+                            <div class="publication-header">
+                                <img src="image/icon/conf_icon/neurips.svg" alt="NeurIPS" class="conf-logo">
+                            </div>
+                            <div class="publication-body">
+                                <h3 class="publication-title">DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models</h3>
+                                <div class="publication-authors">
+                                    Boxin Wang, Weixin Chen, Hengzhi Pei, Chulin Xie, Mintong Kang, Chenhui Zhang, Chejian Xu, Zidi Xiong, Ritik Dutta, Rylan Schaeffer, Sang T. Truong, Simran Arora, Mantas Mazeika, Dan Hendrycks, Zinan Lin, Yu Cheng, Sanmi Koyejo, Dawn Song, Bo Li
+                                </div>
+                                <div class="publication-venue-wrapper">
+                                    <div class="publication-venue">NeurIPS</div>
+                                    <div class="publication-year">2023</div>
+                                </div>
+                                <div class="publication-tags">
+                                    <span class="publication-tag">Data/Computing</span>
                                     <span class="publication-tag">Social Good</span>
                                 </div>
                                 <div class="publication-links">
