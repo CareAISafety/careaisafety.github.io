@@ -226,75 +226,90 @@
             margin: 0;
         }
         
-        /* Footer */
+        /* Footer Styles - Fix list item alignment */
         .footer {
             background-color: var(--dark-purple);
             color: var(--white);
-            padding: 70px 20px 30px;
+            padding: 60px 0 30px;
         }
         
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 50px;
+            grid-template-columns: auto auto auto auto;
+            gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-container > div:first-child {
+            margin-right: 10px;
+            max-width: 220px;
+        }
+        
+        .footer-container > div:first-child p {
+            line-height: 1.4;
+            margin-bottom: 15px;
         }
         
         .footer-logo {
             margin-bottom: 20px;
         }
         
-        .footer-logo img {
-            height: 50px;
-            margin-bottom: 15px;
-        }
-        
-        .footer-container p {
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            opacity: 0.8;
-        }
-        
         .footer h4 {
-            color: var(--white);
-            margin-bottom: 20px;
             font-size: 18px;
+            margin-bottom: 20px;
             position: relative;
-            padding-bottom: 10px;
+            display: inline-block;
+            text-align: left;
         }
         
         .footer h4:after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -8px;
             left: 0;
             width: 40px;
             height: 2px;
             background-color: var(--secondary-purple);
         }
         
+        .footer p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
         .footer-links {
             list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            display: block;
         }
         
         .footer-links li {
             margin-bottom: 10px;
+            display: block;
+            width: 100%;
+            text-align: left;
         }
         
         .footer-links a {
-            color: var(--white);
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
             transition: all 0.3s ease;
+            display: inline-block;
         }
         
         .footer-links a:hover {
-            color: var(--light-purple);
+            color: var(--white);
+            padding-left: 5px;
         }
         
         .social-links {
             display: flex;
+            gap: 12px;
             margin-top: 20px;
         }
         
@@ -302,17 +317,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
-            background-color: var(--primary-purple);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            margin-right: 10px;
+            color: var(--white);
+            text-decoration: none;
             transition: all 0.3s ease;
         }
         
         .social-links a:hover {
-            background-color: var(--secondary-purple);
+            background-color: var(--primary-purple);
             transform: translateY(-3px);
+        }
+        
+        .social-links i {
+            font-size: 18px;
         }
         
         .copyright {
@@ -585,7 +605,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
-        /* Responsive styles */
+        /* Maintain center alignment only on mobile */
         @media (max-width: 768px) {
             .header {
                 padding: 15px 20px;
@@ -606,6 +626,37 @@
             
             .publications-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+            
+            .footer-container > div:first-child {
+                margin: 0 auto;
+            }
+            
+            .footer h4:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .footer-links li {
+                text-align: center;
+            }
+            
+            .footer-container > div {
+                align-items: center;
+            }
+            
+            .footer h4 {
+                text-align: center;
             }
         }
     </style>
@@ -878,43 +929,43 @@
                 <div class="footer-logo">
                     <img src="image/care_full_text_smaller_plain.png" alt="Center of Safe and Responsible AI" style="height: 45px; width: auto;">
                 </div>
-                <p>Empowering businesses with safe and secure AI solutions for a trustworthy future.</p>
+                <p>Advancing safe and responsible AI research for the benefit of humanity.</p>
                 <div class="social-links">
-                    <a href="#"><span>LI</span></a>
-                    <a href="#"><span>TW</span></a>
-                    <a href="#"><span>FB</span></a>
+                    <a href="https://www.linkedin.com/company/center-of-safe-and-responsible-ai" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/care_ai_safety" target="_blank"><img src="image/icon/x.png" alt="X" style="width: 18px; height: 18px;"></a>
+                    <a href="https://github.com/care-ai" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
             <div>
-                <h4>Solutions</h4>
+                <h4>About CARE</h4>
                 <ul class="footer-links">
-                    <li><a href="#">AI Safety Evaluation</a></li>
-                    <li><a href="#">Security Guardrails</a></li>
-                    <li><a href="#">Secure Training</a></li>
-                    <li><a href="#">Risk Assessment</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
             <div>
-                <h4>Resources</h4>
+                <h4>Research</h4>
                 <ul class="footer-links">
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Research</a></li>
-                    <li><a href="#">Case Studies</a></li>
-                    <li><a href="#">Documentation</a></li>
+                    <li><a href="research.html">Overview</a></li>
+                    <li><a href="research.html#projects">Projects</a></li>
+                    <li><a href="publication.html">Publications</a></li>
+                    <li><a href="https://careaisafety.substack.com/">Newsletter</a></li>
                 </ul>
             </div>
             <div>
-                <h4>Company</h4>
+                <h4>Community</h4>
                 <ul class="footer-links">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="community.html">Community Overview</a></li>
+                    <li><a href="event.html">Events</a></li>
+                    <li><a href="community.html#programs">Programs</a></li>
+                    <li><a href="donate.html">Support Our Work</a></li>
                 </ul>
             </div>
         </div>
         <div class="copyright">
-            &copy; 2024 Your Company. All Rights Reserved.
+            &copy; 2024 Center of Safe and Responsible AI. All Rights Reserved.
         </div>
     </footer>
 </body>
