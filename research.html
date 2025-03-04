@@ -346,11 +346,14 @@
         
         /* Additional styles for the research page */
         .research-hero {
-            background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
+            background: transparent;
             color: var(--white);
             padding: 80px 0 60px;
             position: relative;
             overflow: hidden;
+            min-height: 20vh;
+            display: flex;
+            align-items: center;
         }
         
         .research-hero:before {
@@ -360,9 +363,21 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background-image: url('image/pattern.svg');
+            background-image: url('image/background/main_1.jpg');
             background-size: cover;
-            opacity: 0.1;
+            background-position: center;
+            z-index: -2;
+        }
+        
+        .research-hero:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(135deg, rgba(44, 22, 84, 0.8) 0%, rgba(74, 30, 140, 0.7) 50%, rgba(126, 87, 194, 0.6) 100%);
+            z-index: -1;
         }
         
         .research-hero-content {
@@ -659,6 +674,184 @@
                 text-align: center;
             }
         }
+        
+        /* Research Areas with consistent styling */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .research-pillar-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            min-height: 250px;
+        }
+        
+        .pillar-left-bar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background-color: var(--primary-purple);
+        }
+        
+        .pillar-bg-decoration {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 100px;
+            background-color: var(--light-purple);
+            opacity: 0.15;
+            border-radius: 0 0 0 80px;
+            z-index: 0;
+        }
+        
+        .research-pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .research-pillar-card h3 {
+            color: var(--dark-purple);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            position: relative;
+            z-index: 1;
+            padding-right: 20px;
+        }
+        
+        .research-pillar-card p {
+            margin-bottom: 20px;
+            flex-grow: 1;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Icon styling */
+        .pillar-icon {
+            margin-bottom: 20px;
+            background-color: var(--light-purple);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .pillar-icon i {
+            font-size: 24px;
+            color: var(--primary-purple);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-purple);
+            border: 2px solid var(--primary-purple);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+            margin-top: auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            align-self: flex-start;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-purple);
+            color: var(--white);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Updated styling for research direction cards */
+        .direction-card.research-pillar-card {
+            position: relative;
+            overflow: hidden;
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .direction-card.research-pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .pillar-left-bar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background-color: var(--primary-purple);
+        }
+        
+        .pillar-bg-decoration {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 100px;
+            background-color: var(--light-purple);
+            opacity: 0.15;
+            border-radius: 0 0 0 80px;
+            z-index: 0;
+        }
+        
+        .pillar-icon {
+            margin-bottom: 20px;
+            background-color: var(--light-purple);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .pillar-icon i {
+            font-size: 24px;
+            color: var(--primary-purple);
+        }
+        
+        .direction-card h3,
+        .direction-card p,
+        .direction-card .learn-more {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-partners {
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-top: 15px;
+            color: var(--dark-purple);
+        }
     </style>
 </head>
 <body>
@@ -761,8 +954,10 @@
             
             <div class="direction-grid">
                 <!-- Direction 1 -->
-                <div class="direction-card">
-                    <div class="icon">
+                <div class="direction-card research-pillar-card">
+                    <div class="pillar-left-bar"></div>
+                    <div class="pillar-bg-decoration"></div>
+                    <div class="pillar-icon">
                         <i class="fas fa-flask"></i>
                     </div>
                     <h3>AI Safety + Science</h3>
@@ -770,12 +965,14 @@
                     <div class="direction-partners">
                         <strong>Partners:</strong> Lawrence Livermore National Lab, Center for AI Safety
                     </div>
-                    <a href="#" class="view-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                    <a href="publication.html?filter=Science" class="view-more">Learn more →</a>
                 </div>
                 
                 <!-- Direction 2 -->
-                <div class="direction-card">
-                    <div class="icon">
+                <div class="direction-card research-pillar-card">
+                    <div class="pillar-left-bar"></div>
+                    <div class="pillar-bg-decoration"></div>
+                    <div class="pillar-icon">
                         <i class="fas fa-database"></i>
                     </div>
                     <h3>AI Safety + Data/Computing</h3>
@@ -783,12 +980,14 @@
                     <div class="direction-partners">
                         <strong>Partners:</strong> National Center for Supercomputing Applications, Cloud Providers
                     </div>
-                    <a href="#" class="view-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                    <a href="publication.html?filter=Data/Computing" class="view-more">Learn more →</a>
                 </div>
                 
                 <!-- Direction 3 -->
-                <div class="direction-card">
-                    <div class="icon">
+                <div class="direction-card research-pillar-card">
+                    <div class="pillar-left-bar"></div>
+                    <div class="pillar-bg-decoration"></div>
+                    <div class="pillar-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3>AI Safety + Algorithms/Theoretical Foundations</h3>
@@ -796,12 +995,14 @@
                     <div class="direction-partners">
                         <strong>Partners:</strong> UIUC Computer Science Department, MIT CSAIL
                     </div>
-                    <a href="#" class="view-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                    <a href="publication.html?filter=Algorithms" class="view-more">Learn more →</a>
                 </div>
                 
                 <!-- Direction 4 -->
-                <div class="direction-card">
-                    <div class="icon">
+                <div class="direction-card research-pillar-card">
+                    <div class="pillar-left-bar"></div>
+                    <div class="pillar-bg-decoration"></div>
+                    <div class="pillar-icon">
                         <i class="fas fa-heartbeat"></i>
                     </div>
                     <h3>AI Safety + Medicine/Healthcare</h3>
@@ -809,12 +1010,14 @@
                     <div class="direction-partners">
                         <strong>Partners:</strong> UIUC Medical School, Healthcare Industry Partners
                     </div>
-                    <a href="#" class="view-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                    <a href="publication.html?filter=Healthcare" class="view-more">Learn more →</a>
                 </div>
                 
                 <!-- Direction 5 -->
-                <div class="direction-card">
-                    <div class="icon">
+                <div class="direction-card research-pillar-card">
+                    <div class="pillar-left-bar"></div>
+                    <div class="pillar-bg-decoration"></div>
+                    <div class="pillar-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>AI Safety + Economics</h3>
@@ -822,12 +1025,14 @@
                     <div class="direction-partners">
                         <strong>Partners:</strong> Berkeley HAAS School of Business, Economic Policy Institute
                     </div>
-                    <a href="#" class="view-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                    <a href="publication.html?filter=Economics" class="view-more">Learn more →</a>
                 </div>
                 
                 <!-- Direction 6 -->
-                <div class="direction-card">
-                    <div class="icon">
+                <div class="direction-card research-pillar-card">
+                    <div class="pillar-left-bar"></div>
+                    <div class="pillar-bg-decoration"></div>
+                    <div class="pillar-icon">
                         <i class="fas fa-balance-scale"></i>
                     </div>
                     <h3>AI Safety + Law/Policy</h3>
@@ -835,12 +1040,14 @@
                     <div class="direction-partners">
                         <strong>Partners:</strong> Stanford Center for Legal Informatics, Georgetown Law
                     </div>
-                    <a href="#" class="view-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                    <a href="publication.html?filter=Law/Policy" class="view-more">Learn more →</a>
                 </div>
                 
                 <!-- Direction 7 -->
-                <div class="direction-card">
-                    <div class="icon">
+                <div class="direction-card research-pillar-card">
+                    <div class="pillar-left-bar"></div>
+                    <div class="pillar-bg-decoration"></div>
+                    <div class="pillar-icon">
                         <i class="fas fa-globe"></i>
                     </div>
                     <h3>AI Safety + Social Good</h3>
@@ -848,7 +1055,7 @@
                     <div class="direction-partners">
                         <strong>Partners:</strong> UN AI for Good, Partnership on AI
                     </div>
-                    <a href="#" class="view-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                    <a href="publication.html?filter=Social%20Good" class="view-more">Learn more →</a>
                 </div>
             </div>
         </div>

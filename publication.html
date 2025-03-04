@@ -699,7 +699,7 @@
                                 <img src="image/icon/research.png" alt="Overview">
                             </div>
                             <div class="dropdown-content">
-                                <h4>Overview</h4>
+                                <h4>Research Overview</h4>
                                 <p>Learn about our research vision and approach</p>
                             </div>
                         </a>
@@ -775,6 +775,25 @@
                         </ul>
                     </div>
                     
+                    <!-- Specialized Filters -->
+                    <div class="filter-group">
+                        <h3>Specialized Areas</h3>
+                        <ul class="filter-options">
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-risk-assessment" class="filter-checkbox" data-filter="Risk Assessment">
+                                <label for="filter-risk-assessment" class="filter-label">Risk Assessment</label>
+                            </li>
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-safety-enhancement" class="filter-checkbox" data-filter="Safety Enhancement">
+                                <label for="filter-safety-enhancement" class="filter-label">Safety Enhancement</label>
+                            </li>
+                            <li class="filter-option">
+                                <input type="checkbox" id="filter-theoretical-guarantees" class="filter-checkbox" data-filter="Theoretical Guarantees">
+                                <label for="filter-theoretical-guarantees" class="filter-label">Theoretical Guarantees</label>
+                            </li>
+                        </ul>
+                    </div>
+                    
                     <!-- Year Filters -->
                     <div class="filter-group">
                         <h3>Year</h3>
@@ -844,7 +863,7 @@
                     <div class="publications-grid">
 
                         <!-- MMDT Paper -->
-                        <div class="publication-card" data-filters="Data/Computing,Social Good" data-year="2024" data-venue="ICLR">
+                        <div class="publication-card" data-filters="Data/Computing,Social Good,Risk Assessment" data-year="2024" data-venue="ICLR">
                             <div class="publication-header">
                                 <img src="image/icon/conf_icon/iclr.svg" alt="ICLR" class="conf-logo">
                             </div>
@@ -860,6 +879,7 @@
                                 <div class="publication-tags">
                                     <span class="publication-tag">Data/Computing</span>
                                     <span class="publication-tag">Social Good</span>
+                                    <span class="publication-tag">Risk Assessment</span>
                                 </div>
                                 <div class="publication-links">
                                     <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
@@ -870,7 +890,7 @@
                         </div>
 
                         <!-- AIR-Bench Paper -->
-                        <div class="publication-card" data-filters="Data/Computing,Law/Policy,Social Good" data-year="2024" data-venue="ICLR">
+                        <div class="publication-card" data-filters="Data/Computing,Law/Policy,Social Good,Risk Assessment" data-year="2024" data-venue="ICLR">
                             <div class="publication-header">
                                 <img src="image/icon/conf_icon/iclr.svg" alt="ICLR" class="conf-logo">
                             </div>
@@ -887,6 +907,7 @@
                                     <span class="publication-tag">Data/Computing</span>
                                     <span class="publication-tag">Law/Policy</span>
                                     <span class="publication-tag">Social Good</span>
+                                    <span class="publication-tag">Risk Assessment</span>
                                 </div>
                                 <div class="publication-links">
                                     <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
@@ -897,7 +918,7 @@
                         </div>
 
                         <!-- SafeWatch Paper -->
-                        <div class="publication-card" data-filters="Data/Computing,Algorithms,Law/Policy,Social Good" data-year="2024" data-venue="ICLR">
+                        <div class="publication-card" data-filters="Data/Computing,Algorithms,Law/Policy,Social Good,Safety Enhancement,Risk Assessment" data-year="2024" data-venue="ICLR">
                             <div class="publication-header">
                                 <img src="image/icon/conf_icon/iclr.svg" alt="ICLR" class="conf-logo">
                             </div>
@@ -915,6 +936,8 @@
                                     <span class="publication-tag">Algorithms</span>
                                     <span class="publication-tag">Law/Policy</span>
                                     <span class="publication-tag">Social Good</span>
+                                    <span class="publication-tag">Safety Enhancement</span>
+                                    <span class="publication-tag">Risk Assessment</span>
                                 </div>
                                 <div class="publication-links">
                                     <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
@@ -950,7 +973,7 @@
                         </div>
                         
                         <!-- AdvWave Paper -->
-                        <div class="publication-card" data-filters="Algorithms" data-year="2024" data-venue="ICLR">
+                        <div class="publication-card" data-filters="Algorithms,Risk Assessment" data-year="2024" data-venue="ICLR">
                             <div class="publication-header">
                                 <img src="image/icon/conf_icon/iclr.svg" alt="ICLR" class="conf-logo">
                             </div>
@@ -965,6 +988,7 @@
                                 </div>
                                 <div class="publication-tags">
                                     <span class="publication-tag">Algorithms</span>
+                                    <span class="publication-tag">Risk Assessment</span>
                                 </div>
                                 <div class="publication-links">
                                     <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
@@ -974,7 +998,7 @@
                         </div>
                         
                         <!-- AgentPoison Paper -->
-                        <div class="publication-card" data-filters="Algorithms" data-year="2024" data-venue="NeurIPS">
+                        <div class="publication-card" data-filters="Algorithms,Risk Assessment" data-year="2024" data-venue="NeurIPS">
                             <div class="publication-header">
                                 <img src="image/icon/conf_icon/neurips.svg" alt="NeurIPS" class="conf-logo">
                             </div>
@@ -989,6 +1013,7 @@
                                 </div>
                                 <div class="publication-tags">
                                     <span class="publication-tag">Algorithms</span>
+                                    <span class="publication-tag">Risk Assessment</span>
                                 </div>
                                 <div class="publication-links">
                                     <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
@@ -996,9 +1021,60 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- C-RAG Paper -->
+                        <div class="publication-card" data-filters="Algorithms,Theoretical Guarantees" data-year="2024" data-venue="ICML">
+                            <div class="publication-header">
+                                <img src="image/icon/conf_icon/icml.svg" alt="ICML" class="conf-logo">
+                            </div>
+                            <div class="publication-body">
+                                <h3 class="publication-title">C-RAG: Certified Generation Risks for Retrieval-Augmented Language Models</h3>
+                                <div class="publication-authors">
+                                    Mintong Kang, Nezihe Merve Gürel, Ning Yu, Dawn Song, Bo Li</span>
+                                </div>
+                                <div class="publication-venue-wrapper">
+                                    <div class="publication-venue">ICML</div>
+                                    <div class="publication-year">2024</div>
+                                </div>
+                                <div class="publication-tags">
+                                    <span class="publication-tag">Algorithms</span>
+                                    <span class="publication-tag">Theoretical Guarantees</span>
+                                </div>
+                                <div class="publication-links">
+                                    <a href="https://arxiv.org/pdf/2402.03181" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                    <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
                         
+                        <!-- HALC Paper -->
+                        <div class="publication-card" data-filters="Algorithms,Theoretical Guarantees,Safety Enhancement" data-year="2024" data-venue="ICML">
+                            <div class="publication-header">
+                                <img src="image/icon/conf_icon/icml.svg" alt="ICML" class="conf-logo">
+                            </div>
+                            <div class="publication-body">
+                                <h3 class="publication-title">HALC: Object Hallucination Reduction via Adaptive Focal-Contrast Decoding</h3>
+                                <div class="publication-authors">
+                                    Zhaorun Chen, Zhuokai Zhao, Hongyin Luo, Huaxiu Yao, Bo Li, Jiawei Zhou</span>
+                                </div>
+                                <div class="publication-venue-wrapper">
+                                    <div class="publication-venue">ICML</div>
+                                    <div class="publication-year">2024</div>
+                                </div>
+                                <div class="publication-tags">
+                                    <span class="publication-tag">Algorithms</span>
+                                    <span class="publication-tag">Theoretical Guarantees</span>
+                                    <span class="publication-tag">Safety Enhancement</span>
+                                </div>
+                                <div class="publication-links">
+                                    <a href="https://arxiv.org/pdf/2402.03181" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                                    <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- DecodingTrust Paper -->
-                        <div class="publication-card" data-filters="Data/Computing,Social Good" data-year="2023" data-venue="NeurIPS">
+                        <div class="publication-card" data-filters="Data/Computing,Social Good,Risk Assessment" data-year="2023" data-venue="NeurIPS">
                             <div class="publication-header">
                                 <img src="image/icon/conf_icon/neurips.svg" alt="NeurIPS" class="conf-logo">
                             </div>
@@ -1014,6 +1090,7 @@
                                 <div class="publication-tags">
                                     <span class="publication-tag">Data/Computing</span>
                                     <span class="publication-tag">Social Good</span>
+                                    <span class="publication-tag">Risk Assessment</span>
                                 </div>
                                 <div class="publication-links">
                                     <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
@@ -1280,60 +1357,34 @@
                 console.log(`Checkbox: ${cb.getAttribute('data-filter-type')} - ${cb.getAttribute('data-filter-value')}`);
             });
             
-            // Check for URL parameters to pre-select filters
-            function applyUrlFilters() {
+            // Function to handle URL parameters
+            function handleURLParams() {
                 const urlParams = new URLSearchParams(window.location.search);
                 const filterParam = urlParams.get('filter');
                 
                 if (filterParam) {
-                    // Find the corresponding checkbox
-                    let checkbox;
-                    
-                    switch(filterParam) {
-                        case 'Science':
-                            checkbox = document.getElementById('filter-science');
-                            break;
-                        case 'Data/Computing':
-                            checkbox = document.getElementById('filter-data');
-                            break;
-                        case 'Algorithms':
-                            checkbox = document.getElementById('filter-algorithms');
-                            break;
-                        case 'Medicine':
-                            checkbox = document.getElementById('filter-medicine');
-                            break;
-                        case 'Economics':
-                            checkbox = document.getElementById('filter-economics');
-                            break;
-                        case 'Law/Policy':
-                            checkbox = document.getElementById('filter-law');
-                            break;
-                        case 'Social Good':
-                            checkbox = document.getElementById('filter-social');
-                            break;
-                    }
-                    
+                    // Find and check the matching filter checkbox
+                    const checkbox = document.querySelector(`.filter-checkbox[data-filter="${filterParam}"]`);
                     if (checkbox) {
                         checkbox.checked = true;
                         
                         // Update active filters
-                        activeFilters.filters.push(filterParam);
+                        if (checkbox.dataset.filter) {
+                            activeFilters.filters.push(checkbox.dataset.filter);
+                        } else if (checkbox.dataset.year) {
+                            activeFilters.years.push(checkbox.dataset.year);
+                        } else if (checkbox.dataset.venue) {
+                            activeFilters.venues.push(checkbox.dataset.venue);
+                        }
                         
-                        // Apply the filter
+                        // Apply filters
                         filterPublications();
-                        
-                        // Scroll to publications section
-                        setTimeout(() => {
-                            document.querySelector('.publications-section').scrollIntoView({
-                                behavior: 'smooth'
-                            });
-                        }, 100);
                     }
                 }
             }
             
-            // Run on page load
-            applyUrlFilters();
+            // Call the function when the page loads
+            handleURLParams();
         });
     </script>
 </body>

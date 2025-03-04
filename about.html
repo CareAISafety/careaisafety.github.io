@@ -1,0 +1,1383 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us | Center of Safe and Responsible AI</title>
+    <meta content="Learn about the Center of Safe and Responsible AI (CARE) - Our mission, vision, research pillars, and collaborative approach to ensuring AI systems are safe and beneficial." name="description"/>
+    <meta property="og:title" content="About Us | Center of Safe and Responsible AI" />
+    <meta property="og:description" content="Learn about the Center of Safe and Responsible AI (CARE) - Our mission, vision, research pillars, and collaborative approach to ensuring AI systems are safe and beneficial." />
+    
+    <!-- Favicon -->
+    <link href="image/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <link href="image/logo.png" rel="apple-touch-icon"/>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-purple: #6A49A8;
+            --secondary-purple: #8A66DB;
+            --light-purple: #D1BCF5;
+            --dark-purple: #3B2A5A;
+            --white: #ffffff;
+            --black: #000000;
+            --light-gray: #f5f5f7;
+            --medium-gray: #e0e0e0;
+            --text-dark: #333333;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Nunito Sans', 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        /* Container styles */
+        .container-large {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--dark-purple), var(--primary-purple));
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 15px;
+        }
+        
+        .logo img {
+            height: 42px;
+            width: auto;
+        }
+        
+        .logo .uiuc-logo {
+            height: 40px;
+            border-right: 1px solid rgba(255,255,255,0.3);
+            padding-right: 15px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--light-purple);
+        }
+        
+        .nav-menu a.btn {
+            background-color: var(--white);
+            color: var(--primary-purple);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        
+        .nav-menu a.btn:hover {
+            background-color: var(--light-purple);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Newsletter Banner */
+        .newsletter-banner {
+            background-color: #0056b3;
+            padding: 0.5rem 0;
+            color: white;
+        }
+        
+        .banner-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .banner-link:hover {
+            text-decoration: underline;
+        }
+        
+        .arrow-icon {
+            font-family: sans-serif;
+            display: inline-block;
+            margin-left: 3px;
+        }
+        
+        /* About Hero Section */
+        .about-hero {
+            background: transparent;
+            padding: 100px 20px;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url('image/background/main_1.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+        
+        .about-hero:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(135deg, rgba(44, 22, 84, 0.8) 0%, rgba(74, 30, 140, 0.7) 50%, rgba(126, 87, 194, 0.6) 100%);
+            z-index: -1;
+        }
+        
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+        
+        .about-hero p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fade-in-up 0.8s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+        
+        /* About Sections */
+        .about-section {
+            padding: 80px 20px;
+        }
+        
+        .about-section:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark-purple);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-purple);
+        }
+        
+        .section-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        /* Vision Mission Section with updated design */
+        .vision-mission {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .vision-card, .mission-card {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            min-height: 300px;
+        }
+        
+        .vision-icon, .mission-icon {
+            margin-bottom: 20px;
+            background-color: var(--light-purple);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .vision-icon i, .mission-icon i {
+            font-size: 24px;
+            color: var(--primary-purple);
+        }
+        
+        /* Override any previous styles for these cards */
+        .vision-card:before, .mission-card:before {
+            display: none;
+        }
+        
+        .vision-card h3, .mission-card h3 {
+            font-size: 1.8rem;
+            color: var(--dark-purple);
+            margin-bottom: 20px;
+        }
+        
+        .vision-card p, .mission-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        /* Research Pillars Section */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .research-pillar-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            min-height: 250px;
+        }
+        
+        .pillar-left-bar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background-color: var(--primary-purple);
+        }
+        
+        .pillar-bg-decoration {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background-color: var(--light-purple);
+            opacity: 0.15;
+            border-radius: 0 0 0 80px;
+            z-index: 0;
+        }
+        
+        .research-pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .research-pillar-card h3 {
+            color: var(--dark-purple);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            position: relative;
+            z-index: 1;
+            padding-right: 20px;
+        }
+        
+        .research-pillar-card p {
+            margin-bottom: 20px;
+            flex-grow: 1;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-purple);
+            border: 2px solid var(--primary-purple);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+            margin-top: auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            align-self: flex-start;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-purple);
+            color: var(--white);
+        }
+        
+        /* Approach Section */
+        .approach-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        
+        .approach-image {
+            flex: 0 0 45%;
+        }
+        
+        .approach-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .approach-content {
+            flex: 1;
+        }
+        
+        .approach-content h3 {
+            font-size: 2rem;
+            color: var(--dark-purple);
+            margin-bottom: 20px;
+        }
+        
+        .approach-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .approach-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .approach-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1.1rem;
+        }
+        
+        .approach-list li:before {
+            content: '✓';
+            color: var(--primary-purple);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        /* Community Section */
+        .community-container {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        
+        .community-container h3 {
+            font-size: 1.8rem;
+            color: var(--dark-purple);
+            margin-bottom: 20px;
+        }
+        
+        .community-container p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .community-item {
+            background-color: var(--light-purple);
+            padding: 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .community-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .community-item h4 {
+            font-size: 1.3rem;
+            color: var(--dark-purple);
+            margin-bottom: 10px;
+        }
+        
+        .community-item p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+        
+        /* Partnership Section */
+        .partnership-section {
+            text-align: center;
+        }
+        
+        .partners-logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .partner-logo-item {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+        
+        .partner-logo-item img {
+            max-width: 100%;
+            max-height: 60px;
+            filter: grayscale(40%);
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* Leadership Section */
+        .leadership-container {
+            margin-top: 40px;
+        }
+        
+        .leadership-container h3 {
+            font-size: 1.8rem;
+            color: var(--dark-purple);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .leadership-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+        
+        .leadership-card h4 {
+            font-size: 1.5rem;
+            color: var(--dark-purple);
+            margin-bottom: 15px;
+        }
+        
+        .leadership-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        /* Success Metrics Section */
+        .success-container {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        
+        .success-container h3 {
+            font-size: 1.8rem;
+            color: var(--dark-purple);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .success-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .success-list li {
+            background-color: var(--light-purple);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 35px;
+        }
+        
+        .success-list li:before {
+            content: '✓';
+            color: var(--primary-purple);
+            font-weight: bold;
+            position: absolute;
+            left: 15px;
+        }
+        
+        .success-list li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Footer Styles */
+        .footer {
+            background-color: var(--dark-purple);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        
+        .footer-container > div:first-child {
+            margin-right: 10px;
+            max-width: 220px;
+        }
+        
+        .footer-container > div:first-child p {
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer h4:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-purple);
+        }
+        
+        .footer p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-purple);
+            transform: translateY(-3px);
+        }
+        
+        .social-links i {
+            font-size: 18px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+        
+        /* Animation */
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Dropdown styles - same as in index.html */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dropdown-arrow {
+            font-size: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background-color: white;
+            display: flex;
+            min-width: 800px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            margin-top: 15px;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+            margin: 0 10px;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(106, 73, 168, 0.05);
+        }
+
+        .dropdown-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(106, 73, 168, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .dropdown-icon img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+
+        .dropdown-content {
+            text-align: center;
+        }
+
+        .dropdown-content h4 {
+            color: var(--dark-purple);
+            font-size: 16px;
+            margin-bottom: 3px;
+        }
+
+        .dropdown-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.3;
+            margin: 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-hero p {
+                font-size: 1rem;
+            }
+            
+            .vision-mission {
+                flex-direction: column;
+            }
+            
+            .approach-container {
+                flex-direction: column;
+            }
+            
+            .approach-image {
+                flex: 0 0 100%;
+                margin-bottom: 30px;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .vision-card h3, .mission-card h3, .approach-content h3 {
+                font-size: 1.5rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .dropdown-menu {
+                min-width: 300px;
+                flex-direction: column;
+            }
+            
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Pillar card icons */
+        .pillar-icon {
+            margin-bottom: 20px;
+            background-color: var(--light-purple);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .pillar-icon i {
+            font-size: 24px;
+            color: var(--primary-purple);
+        }
+
+        /* Get Involved Section - Updated to match community.html exactly */
+        .get-involved-section {
+            padding: 60px 0 80px;
+            position: relative;
+        }
+
+        /* Add separator line */
+        .get-involved-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--primary-purple), transparent);
+            opacity: 0.5;
+        }
+
+        /* Create some space between separator and box */
+        .get-involved-box {
+            background-color: #D1BCF5;
+            padding: 50px 50px 45px;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 30px auto 0; /* Added top margin of 30px */
+            box-shadow: 0 5px 25px rgba(106, 73, 168, 0.1);
+        }
+
+        .get-involved-box h2 {
+            font-size: 32px;
+            color: var(--dark-purple);
+            margin-bottom: 20px;
+        }
+
+        .get-involved-box p {
+            margin-bottom: 30px;
+            font-size: 18px;
+            color: var(--text-dark);
+        }
+
+        .get-involved-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Use the exact same button styles as in community.html */
+        .get-involved-buttons .btn-primary, 
+        .get-involved-buttons .btn-secondary {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .get-involved-buttons .btn-primary {
+            background-color: var(--primary-purple);
+            color: var(--white);
+        }
+
+        .get-involved-buttons .btn-primary:hover {
+            background-color: var(--secondary-purple);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .get-involved-buttons .btn-secondary {
+            background-color: var(--white);
+            color: var(--primary-purple);
+        }
+
+        .get-involved-buttons .btn-secondary:hover {
+            background-color: var(--light-gray);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="image/uiuc_text_no_bg.png" alt="University of Illinois Urbana-Champaign" class="uiuc-logo">
+                <img src="image/care_full_text_smaller_plain.png" alt="Center of Safe and Responsible AI">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="community.html" class="dropdown-toggle">Community <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown-menu">
+                        <a href="community.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/community_overview.webp" alt="Overview">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>CARE Community</h4>
+                                <p>Learn about our community and initiatives</p>
+                            </div>
+                        </a>
+                        <a href="event.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/event.webp" alt="Events">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Recent Events</h4>
+                                <p>Conferences, workshops and seminars</p>
+                            </div>
+                        </a>
+                        <a href="community.html#programs" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/program.png" alt="Programs">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Programs</h4>
+                                <p>Our mentorship and outreach initiatives</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="research.html" class="dropdown-toggle">Research <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown-menu">
+                        <a href="research.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/research.png" alt="Overview">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Research Overview</h4>
+                                <p>Learn about our research vision and approach</p>
+                            </div>
+                        </a>
+                        <a href="research.html#projects" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/project.png" alt="Projects">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Our Projects</h4>
+                                <p>Explore our current research initiatives</p>
+                            </div>
+                        </a>
+                        <a href="publication.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/publication.png" alt="Publications">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Publications</h4>
+                                <p>Browse our research papers and articles</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html" class="btn">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Newsletter Banner -->
+    <div class="newsletter-banner">
+        <div class="container-large">
+            <a href="https://careaisafety.substack.com/" class="banner-link">
+                <span>Get insights on the latest AI safety developments delivered to your inbox</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.16797 10.0003H15.8346M15.8346 10.0003L10.0013 4.16699M15.8346 10.0003L10.0013 15.8337" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container-large">
+            <h1>Secure Your AI with CARE</h1>
+            <p>Advancing cutting-edge research and interdisciplinary collaboration to ensure AI systems are designed and used in ways that maximize safety and societal benefit while minimizing risks</p>
+        </div>
+    </section>
+
+    <!-- Vision and Mission Section -->
+    <section class="about-section">
+        <div class="container-large">
+            <div class="section-header">
+                <h2>Our Vision & Mission</h2>
+                <p>We envision a future where AI technologies are designed, implemented, and regulated in a manner that maximizes benefits while minimizing potential risks and harm.</p>
+            </div>
+            
+            <div class="vision-mission">
+                <div class="vision-card research-pillar-card">
+                    <div class="pillar-left-bar"></div>
+                    <div class="pillar-bg-decoration"></div>
+                    <div class="pillar-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>We envision a future where AI technologies are designed, implemented, and regulated in a manner that maximizes benefits while minimizing potential risks and harm.</p>
+                    <p>By integrating diverse perspectives from academia, industry, and society, we aim to shape AI development and governance for the betterment of humanity.</p>
+                </div>
+                
+                <div class="mission-card research-pillar-card">
+                    <div class="pillar-left-bar"></div>
+                    <div class="pillar-bg-decoration"></div>
+                    <div class="pillar-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>The mission of CARE is to serve as a focal point for pioneering research in the realm of socially accountable and safe AI, while actively promoting the convergence of AI and societal concerns.</p>
+                    <p>We aim to ensure that AI systems are designed and used in ways that respect human autonomy, promote fairness, and enhance human welfare.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Pillars Section -->
+    <section class="about-section">
+        <div class="container-large">
+            <div class="section-header">
+                <h2>Research Pillars</h2>
+                <p>Our center focuses on seven key interdisciplinary research areas to ensure AI safety and responsible development across various domains</p>
+            </div>
+            
+            <div class="pillars-grid">
+                <div class="research-pillar-card" id="risk-assessment">
+                    <div class="pillar-left-bar"></div>
+                    <div class="pillar-bg-decoration"></div>
+                    <div class="pillar-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>AI Safety + Science</h3>
+                    <p>Building unified red teaming/evaluation platforms for AI4Science models in collaboration with national labs and research centers, ensuring safe application in scientific domains.</p>
+                    <a href="publication.html?filter=Science" class="btn-secondary">View Publications</a>
+                </div>
+                
+                <div class="research-pillar-card" id="safety-enhancement">
+                    <div class="pillar-left-bar"></div>
+                    <div class="pillar-bg-decoration"></div>
+                    <div class="pillar-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>AI Safety + Data/Computing</h3>
+                    <p>Ensuring secure, reliable, and efficient AI systems with robust data integrity, computational reliability, and resistance to adversarial threats.</p>
+                    <a href="publication.html?filter=Data/Computing" class="btn-secondary">View Publications</a>
+                </div>
+                
+                <div class="research-pillar-card" id="theoretical-guarantees">
+                    <div class="pillar-left-bar"></div>
+                    <div class="pillar-bg-decoration"></div>
+                    <div class="pillar-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>AI Safety + Algorithms</h3>
+                    <p>Developing fundamental principles and methodologies to ensure AI systems operate safely and predictably with strong theoretical foundations and guarantees.</p>
+                    <a href="publication.html?filter=Algorithms" class="btn-secondary">View Publications</a>
+                </div>
+                
+                <div class="research-pillar-card">
+                    <div class="pillar-left-bar"></div>
+                    <div class="pillar-bg-decoration"></div>
+                    <div class="pillar-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>AI Safety + Medicine/Healthcare</h3>
+                    <p>Creating robust safety mechanisms for AI systems in healthcare settings, ensuring reliable, unbiased recommendations while maintaining patient privacy.</p>
+                    <a href="publication.html?filter=Healthcare" class="btn-secondary">View Publications</a>
+                </div>
+                
+                <div class="research-pillar-card">
+                    <div class="pillar-left-bar"></div>
+                    <div class="pillar-bg-decoration"></div>
+                    <div class="pillar-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>AI Safety + Economics</h3>
+                    <p>Proposing novel mechanism designs and risk assessments for AI in economic activities, ensuring sustainable and beneficial economic impacts.</p>
+                    <a href="publication.html?filter=Economics" class="btn-secondary">View Publications</a>
+                </div>
+                
+                <div class="research-pillar-card">
+                    <div class="pillar-left-bar"></div>
+                    <div class="pillar-bg-decoration"></div>
+                    <div class="pillar-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>AI Safety + Law/Policy</h3>
+                    <p>Exploring regulatory frameworks, participatory governance, and ethical guidelines to ensure responsible AI development and deployment.</p>
+                    <a href="publication.html?filter=Law/Policy" class="btn-secondary">View Publications</a>
+                </div>
+                
+                <div class="research-pillar-card">
+                    <div class="pillar-left-bar"></div>
+                    <div class="pillar-bg-decoration"></div>
+                    <div class="pillar-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>AI Safety + Social Good</h3>
+                    <p>Leveraging AI to address critical social challenges while promoting equity, inclusivity, and accessibility, particularly for marginalized communities.</p>
+                    <a href="publication.html?filter=Social%20Good" class="btn-secondary">View Publications</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interdisciplinary Approach Section -->
+    <section class="about-section">
+        <div class="container-large">
+            <div class="section-header">
+                <h2>Our Interdisciplinary Approach</h2>
+                <p>Bringing together experts from various fields to tackle the complex challenges of AI safety</p>
+            </div>
+            
+            <div class="approach-container">
+                <div class="approach-image">
+                    <img src="image/background/main_1.jpg" alt="Research collaboration at CARE">
+                </div>
+                
+                <div class="approach-content">
+                    <h3>Collaborative Excellence</h3>
+                    <p>The complexity of AI safety requires expertise from multiple disciplines. At CARE, we bring together leading researchers from computer science, law, philosophy, psychology, and engineering to study the technical and ethical challenges of developing safe and beneficial AI.</p>
+                    
+                    <p>Our research center facilitates collaboration among computer science, data science, social sciences, law, and philosophy. For instance, cognitive psychologists provide insights into human values and ethics, while legal scholars analyze regulatory gaps and governance needs.</p>
+                    
+                    <ul class="approach-list">
+                        <li>Developing new technical methods for AI safety and alignment</li>
+                        <li>Creating theoretical frameworks to understand and predict AI behavior</li>
+                        <li>Designing governance protocols for responsible AI deployment</li>
+                        <li>Building unified evaluation platforms for AI models across domains</li>
+                        <li>Establishing mathematical foundations and formal guarantees for AI safety</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Building Section -->
+    <section class="about-section">
+        <div class="container-large">
+            <div class="section-header">
+                <h2>Community Building & Outreach</h2>
+                <p>Fostering a diverse and inclusive community dedicated to AI safety</p>
+            </div>
+            
+            <div class="community-container">
+                <h3>Cultivating Talent & Collaboration</h3>
+                <p>The center provides extensive mentoring and professional development for students and early career researchers in AI safety. We recruit a diverse cohort of PhD students, postdocs, and researchers and pair them with senior mentors.</p>
+                
+                <div class="community-grid">
+                    <div class="community-item">
+                        <h4>Visiting Scholar Program</h4>
+                        <p>Bringing junior scholars from minority-serving institutions to conduct collaborative research with our faculty</p>
+                    </div>
+                    
+                    <div class="community-item">
+                        <h4>Diversity & Inclusion</h4>
+                        <p>Specific outreach to involve women and underrepresented minorities in AI safety research</p>
+                    </div>
+                    
+                    <div class="community-item">
+                        <h4>Annual Conference</h4>
+                        <p>Bringing together academics, industry researchers, policymakers, and advocacy groups</p>
+                    </div>
+                    
+                    <div class="community-item">
+                        <h4>Industry Retreats</h4>
+                        <p>Facilitating discussions on emergent AI safety problems with industry partners</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships Section -->
+    <section class="about-section partnership-section">
+        <div class="container-large">
+            <div class="section-header">
+                <h2>Our Partnerships</h2>
+                <p>Collaborating with leading organizations to advance AI safety research</p>
+            </div>
+            
+            <div class="partners-logo-grid">
+                <div class="partner-logo-item">
+                    <img src="image/logo/uk_aisi.png" alt="UK AI Safety Institute">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="image/logo/us_aisi.png" alt="US AI Safety Institute">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="image/logo/mlcommons.jpg" alt="MLCommons">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="image/logo/llnl-logo.webp" alt="Lawrence Livermore National Lab">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="image/logo/rand.png" alt="RAND">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="image/logo/cais.png" alt="Center for AI Safety">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="image/logo/ssf.png" alt="Schmidt Science Foundation">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="image/logo/rdi.jpg" alt="Berkeley RDI Center">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="image/logo/op.jpg" alt="Open Philanthropy">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Success Metrics Section -->
+    <section class="about-section">
+        <div class="container-large">
+            <div class="section-header">
+                <h2>What Success Looks Like</h2>
+                <p>Measuring our impact and setting benchmarks for progress in AI safety research</p>
+            </div>
+            
+            <div class="success-container">
+                <p class="success-intro">Success for our research center will be defined by several key outcomes that advance the field of AI safety and responsible AI development:</p>
+                
+                <ul class="success-list">
+                    <li>Significant advancements in the safety of foundation models across different domains including science, medicine, economics, and social applications</li>
+                    <li>Development of scalable and transferable methodologies that can be widely adopted by the AI community</li>
+                    <li>Creation of a unified platform for safe data collection, model training, and evaluation that becomes an industry standard</li>
+                    <li>Establishment of a vibrant interdisciplinary research community that bridges technical and social aspects of AI safety</li>
+                    <li>Demonstrable improvements in the safety, fairness, and truthfulness of foundation models, setting new standards for AI reliability</li>
+                    <li>Training the next generation of AI safety researchers through our education and mentorship programs</li>
+                    <li>Influencing policy and governance frameworks to ensure responsible AI deployment at scale</li>
+                </ul>
+                
+                <p class="success-outro">Through these achievements, we aim to position our center as a leader in AI safety research, attracting additional funding and support to ensure long-term sustainability and impact.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved with CARE Section -->
+    <section class="get-involved-section">
+        <div class="container-large">
+            <div class="get-involved-box">
+                <h2>Get Involved with CARE</h2>
+                <p>Join our community and contribute to the advancement of safe and responsible AI. Whether you're a researcher, student, industry professional, or policy advocate, there's a place for you in our community.</p>
+                <div class="get-involved-buttons">
+                    <a href="https://careaisafety.substack.com/" class="btn-primary">Join Our Mailing List</a>
+                    <a href="contact.html" class="btn-secondary">Partner With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div>
+                <div class="footer-logo">
+                    <img src="image/care_full_text_smaller_plain.png" alt="Center of Safe and Responsible AI" style="height: 45px; width: auto;">
+                </div>
+                <p>Advancing safe and responsible AI research for the benefit of humanity.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/center-of-safe-and-responsible-ai" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/care_ai_safety" target="_blank"><img src="image/icon/x.png" alt="X" style="width: 18px; height: 18px;"></a>
+                    <a href="https://github.com/care-ai" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>About CARE</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Research</h4>
+                <ul class="footer-links">
+                    <li><a href="research.html">Overview</a></li>
+                    <li><a href="research.html#projects">Projects</a></li>
+                    <li><a href="publication.html">Publications</a></li>
+                    <li><a href="https://careaisafety.substack.com/">Newsletter</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Community</h4>
+                <ul class="footer-links">
+                    <li><a href="community.html">Community Overview</a></li>
+                    <li><a href="event.html">Events</a></li>
+                    <li><a href="community.html#programs">Programs</a></li>
+                    <li><a href="donate.html">Support Our Work</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Center of Safe and Responsible AI. All Rights Reserved.
+        </div>
+    </footer>
+</body>
+</html>
