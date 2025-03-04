@@ -327,6 +327,9 @@
         }
         
         .event-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             background-color: var(--white);
             border-radius: 12px;
             overflow: hidden;
@@ -370,7 +373,11 @@
         }
         
         .event-content {
+            flex-grow: 1;
             padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         
         .event-content h3 {
@@ -388,7 +395,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 20px;
+            margin-top: auto;
             padding-top: 15px;
             border-top: 1px solid var(--medium-gray);
         }
@@ -1151,8 +1158,6 @@
             </div>
         </div>
     </section>
-
-
 
     <!-- Footer -->
     <footer class="footer">
