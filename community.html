@@ -496,10 +496,10 @@
         /* Community Metrics Section */
         .community-metrics {
             padding: 80px 0;
-            background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
             color: var(--white);
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
         
         .community-metrics:before {
@@ -509,9 +509,22 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background-image: url('image/pattern.svg');
+            background-image: url('image/background/main_1.jpg');
             background-size: cover;
-            opacity: 0.1;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .community-metrics:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(135deg, rgba(44, 22, 84, 0.9) 0%, rgba(74, 30, 140, 0.85) 50%, rgba(126, 87, 194, 0.8) 100%);
+            z-index: 0;
         }
         
         .metrics-container {
@@ -519,14 +532,24 @@
             z-index: 1;
         }
         
+        .metrics-container .section-title h2,
+        .metrics-container .section-title p {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
         .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 40px;
             margin-top: 50px;
+            text-align: center;
         }
         
         .metric-item {
+            flex: 0 0 200px;
             text-align: center;
         }
         
@@ -534,7 +557,7 @@
             font-size: 48px;
             font-weight: 700;
             margin-bottom: 10px;
-            color: var(--white);
+            color: var(--light-purple);
         }
         
         .metric-label {
@@ -770,6 +793,114 @@
                 font-size: 28px;
             }
         }
+
+        /* Updated Community Stats Section */
+        .community-stats {
+            padding: 80px 0;
+            color: white;
+            position: relative;
+            background-image: url('image/background/main_1.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .community-stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(135deg, rgba(44, 22, 84, 0.9) 0%, rgba(74, 30, 140, 0.85) 50%, rgba(106, 73, 168, 0.8) 100%);
+        }
+
+        .community-stats .container-large {
+            position: relative;
+            z-index: 5;
+        }
+
+        .community-stats h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .stats-subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            opacity: 0.9;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .stat-item {
+            width: 200px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--light-purple);
+            text-align: center;
+            display: block;
+        }
+
+        .stat-description {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            text-align: center;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .stats-container {
+                gap: 30px;
+            }
+            
+            .stat-item {
+                width: 160px;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .stats-container {
+                gap: 20px;
+            }
+            
+            .stat-item {
+                width: 130px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .stat-description {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -980,33 +1111,28 @@
         </div>
     </section>
 
-    <!-- Community Metrics Section -->
-    <section class="community-metrics">
-        <div class="container-large metrics-container">
-            <div class="section-title" style="color: var(--white);">
-                <h2>Building a Community for Impact</h2>
-                <p>Our growing community is making strides in AI safety research and outreach</p>
-            </div>
+    <!-- Community Stats Section -->
+    <section class="community-stats">
+        <div class="container-large">
+            <h2>Building a Community for Impact</h2>
+            <p class="stats-subtitle">Our growing community is making strides in AI safety research and outreach</p>
             
-            <div class="metrics-grid">
-                <div class="metric-item">
-                    <div class="metric-number">500+</div>
-                    <div class="metric-label">Annual Conference Attendees</div>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-description">Annual Conference Attendees</div>
                 </div>
-                
-                <div class="metric-item">
-                    <div class="metric-number">50+</div>
-                    <div class="metric-label">Partnering Organizations</div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-description">Partnering Organizations</div>
                 </div>
-                
-                <div class="metric-item">
-                    <div class="metric-number">30+</div>
-                    <div class="metric-label">Research Seminars Per Year</div>
+                <div class="stat-item">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-description">Research Seminars Per Year</div>
                 </div>
-                
-                <div class="metric-item">
-                    <div class="metric-number">100+</div>
-                    <div class="metric-label">Mentored Researchers</div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-description">Mentored Researchers</div>
                 </div>
             </div>
         </div>
@@ -1025,6 +1151,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!-- Footer -->
     <footer class="footer">
