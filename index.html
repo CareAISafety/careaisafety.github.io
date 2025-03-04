@@ -1375,5 +1375,38 @@
             &copy; 2025 Center of Safe and Responsible AI. All Rights Reserved.
         </div>
     </footer>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get all links that have a hash (#) in their href
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            
+            // Add click event listener to each anchor link
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Prevent default jump behavior
+                    e.preventDefault();
+                    
+                    // Get the target element
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return; // Skip if it's just "#"
+                    
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Smooth scroll to target
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update URL without jumping (optional)
+                        history.pushState(null, null, targetId);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
