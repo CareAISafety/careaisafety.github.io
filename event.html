@@ -455,6 +455,9 @@
         }
         
         .event-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             background-color: var(--white);
             border-radius: 12px;
             overflow: hidden;
@@ -498,7 +501,11 @@
         }
         
         .event-content {
+            flex-grow: 1;
             padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         
         .event-content h3 {
@@ -906,6 +913,9 @@
         }
         
         .speaker-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             background-color: var(--white);
             border-radius: 12px;
             overflow: hidden;
@@ -935,7 +945,11 @@
         }
         
         .speaker-info {
+            flex-grow: 1;
             padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         
         .speaker-info h3 {
@@ -961,6 +975,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
+            margin-top: auto;
         }
         
         .speaker-topics span {
@@ -1192,7 +1207,7 @@
                 <div class="event-card">
                     <div class="event-image">
                         <div class="event-date">August 21-22, 2024</div>
-                        <img src="https://source.unsplash.com/random/600x400/?technology" alt="AI Policy Summit">
+                        <img src="image/event/policy.jpg" alt="AI Policy Summit">
                     </div>
                     <div class="event-content">
                         <h3>AI Policy & Governance Summit</h3>
