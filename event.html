@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Events | CARE - Center of Safe and Responsible AI</title>
+    <meta content="Upcoming events, conferences, and community building activities by the Center of Safe and Responsible AI" name="description"/>
+    <meta property="og:title" content="Events | CARE - Center of Safe and Responsible AI" />
+    <meta property="og:description" content="Upcoming events, conferences, and community building activities by the Center of Safe and Responsible AI" />
+    
+    <!-- Favicon -->
+    <link href="image/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <link href="image/logo.png" rel="apple-touch-icon"/>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-purple: #6A49A8;
+            --secondary-purple: #8A66DB;
+            --light-purple: #D1BCF5;
+            --dark-purple: #3B2A5A;
+            --white: #ffffff;
+            --black: #000000;
+            --light-gray: #f5f5f7;
+            --medium-gray: #e0e0e0;
+            --text-dark: #333333;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Nunito Sans', 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        /* Container styles */
+        .container-large {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--dark-purple), var(--primary-purple));
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 15px;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .logo .uiuc-logo {
+            height: 40px;
+            border-right: 1px solid rgba(255,255,255,0.3);
+            padding-right: 15px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--light-purple);
+        }
+        
+        .nav-menu a.btn {
+            background-color: var(--white);
+            color: var(--primary-purple);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        
+        .nav-menu a.btn:hover {
+            background-color: var(--light-purple);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Dropdown styles - horizontal with icons */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .dropdown-arrow {
+            font-size: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background-color: white;
+            display: flex;
+            min-width: 800px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            margin-top: 15px;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        .dropdown-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+            margin: 0 10px;
+        }
+        
+        .dropdown-item:hover {
+            background-color: rgba(106, 73, 168, 0.05);
+        }
+        
+        .dropdown-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(106, 73, 168, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        
+        .dropdown-icon img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+        
+        .dropdown-content {
+            text-align: center;
+        }
+        
+        .dropdown-content h4 {
+            color: var(--dark-purple);
+            font-size: 16px;
+            margin-bottom: 3px;
+        }
+        
+        .dropdown-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.3;
+            margin: 0;
+        }
+        
+        /* Event Hero Section */
+        .event-hero {
+            background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
+            color: var(--white);
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .event-hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url('image/pattern.svg');
+            background-size: cover;
+            opacity: 0.1;
+        }
+        
+        .event-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+        
+        .event-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .event-hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            opacity: 0.9;
+        }
+        
+        /* Event Tabs Section */
+        .event-tabs {
+            padding: 60px 0;
+        }
+        
+        .tabs-container {
+            margin-bottom: 40px;
+        }
+        
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            border-bottom: 2px solid var(--medium-gray);
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 10px 25px;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            margin: 0 10px;
+        }
+        
+        .tab-button:hover {
+            color: var(--primary-purple);
+        }
+        
+        .tab-button.active {
+            color: var(--primary-purple);
+        }
+        
+        .tab-button.active:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-purple);
+        }
+        
+        .section-title {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark-purple);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-purple);
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            color: #555;
+        }
+        
+        /* Featured Event */
+        .featured-event {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: center;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+        
+        .featured-event-image {
+            height: 400px;
+            overflow: hidden;
+        }
+        
+        .featured-event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .featured-event:hover .featured-event-image img {
+            transform: scale(1.05);
+        }
+        
+        .featured-event-content {
+            padding: 40px;
+        }
+        
+        .featured-event-tag {
+            display: inline-block;
+            background-color: var(--light-purple);
+            color: var(--dark-purple);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .featured-event-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--dark-purple);
+            line-height: 1.3;
+        }
+        
+        .featured-event-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            color: #666;
+            font-size: 15px;
+        }
+        
+        .meta-item i {
+            color: var(--primary-purple);
+            margin-right: 8px;
+        }
+        
+        .featured-event-desc {
+            margin-bottom: 25px;
+            color: #555;
+        }
+        
+        .event-button {
+            display: inline-block;
+            background-color: var(--primary-purple);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .event-button:hover {
+            background-color: var(--secondary-purple);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Event Cards Grid */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .event-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .event-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .event-card:hover .event-image img {
+            transform: scale(1.05);
+        }
+        
+        .event-date {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary-purple);
+            color: var(--white);
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 14px;
+            z-index: 1;
+        }
+        
+        .event-content {
+            padding: 25px;
+        }
+        
+        .event-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark-purple);
+        }
+        
+        .event-content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .event-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid var(--medium-gray);
+        }
+        
+        .event-location {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .event-location i {
+            margin-right: 5px;
+            color: var(--primary-purple);
+        }
+        
+        /* Event Timeline */
+        .event-timeline {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 3px;
+            background-color: var(--primary-purple);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-content {
+            position: relative;
+            width: 45%;
+            padding: 25px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+        
+        .timeline-content:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--white);
+            border: 4px solid var(--primary-purple);
+            border-radius: 50%;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content:before {
+            left: -50px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content:before {
+            right: -50px;
+        }
+        
+        .timeline-date {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: var(--light-purple);
+            color: var(--dark-purple);
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--dark-purple);
+        }
+        
+        .timeline-content p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-box {
+            background-color: var(--light-purple);
+            padding: 50px;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-box h2 {
+            font-size: 32px;
+            color: var(--dark-purple);
+            margin-bottom: 20px;
+        }
+        
+        .cta-box p {
+            margin-bottom: 30px;
+            font-size: 18px;
+            color: var(--text-dark);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary-purple);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-purple);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-purple);
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--light-gray);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Footer Styles */
+        .footer {
+            background-color: var(--dark-purple);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer h4:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-purple);
+        }
+        
+        .footer p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary-purple);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-purple);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .featured-event {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline:before {
+                left: 40px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content:before,
+            .timeline-item:nth-child(even) .timeline-content:before {
+                left: -40px;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+            
+            .dropdown-menu {
+                min-width: 90vw;
+                flex-direction: column;
+            }
+            
+            .dropdown-item {
+                width: 100%;
+            }
+            
+            .event-hero h1 {
+                font-size: 36px;
+            }
+            
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tab-button {
+                font-size: 16px;
+                padding: 8px 15px;
+            }
+            
+            .featured-event-content {
+                padding: 25px;
+            }
+            
+            .featured-event-title {
+                font-size: 24px;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .cta-box {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .event-button {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .featured-event-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+                padding: 15px;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content:before,
+            .timeline-item:nth-child(even) .timeline-content:before {
+                left: -30px;
+            }
+        }
+        
+        /* Improved Speaker Highlight Section */
+        .speaker-highlight {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .speaker-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+        
+        .speaker-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .speaker-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .speaker-card:hover .speaker-image img {
+            transform: scale(1.05);
+        }
+        
+        .speaker-info {
+            padding: 25px;
+        }
+        
+        .speaker-info h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: var(--dark-purple);
+        }
+        
+        .speaker-title {
+            font-size: 14px;
+            color: var(--primary-purple);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .speaker-bio {
+            font-size: 15px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        .speaker-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .speaker-topics span {
+            background-color: var(--light-purple);
+            color: var(--dark-purple);
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        /* Improved Event Resources Section */
+        .event-resources {
+            padding: 80px 0;
+            background: linear-gradient(to bottom right, var(--white), var(--light-gray));
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .resource-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 35px 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .resource-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .resource-icon i {
+            font-size: 32px;
+            color: var(--white);
+        }
+        
+        .resource-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark-purple);
+        }
+        
+        .resource-card p {
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            flex-grow: 1;
+        }
+        
+        .resource-card .event-button {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="image/uiuc_text_no_bg.png" alt="University of Illinois Urbana-Champaign" class="uiuc-logo">
+                <img src="image/care_full_text_smaller_plain.png" alt="Center of Safe and Responsible AI">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">About</a></li>
+                <li class="dropdown">
+                    <a href="community.html" class="dropdown-toggle">Community <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown-menu">
+                        <a href="community.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/community_overview.webp" alt="Overview">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>CARE Community</h4>
+                                <p>Learn about our community and initiatives</p>
+                            </div>
+                        </a>
+                        <a href="event.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/event.webp" alt="Events">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Recent Events</h4>
+                                <p>Conferences, workshops and seminars</p>
+                            </div>
+                        </a>
+                        <a href="community.html#programs" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/program.png" alt="Programs">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Programs</h4>
+                                <p>Our mentorship and outreach initiatives</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="research.html" class="dropdown-toggle">Research <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown-menu">
+                        <a href="research.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/research.png" alt="Overview">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Research Overview</h4>
+                                <p>Learn about our research vision and approach</p>
+                            </div>
+                        </a>
+                        <a href="research.html#projects" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/project.png" alt="Projects">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Our Projects</h4>
+                                <p>Explore our current research initiatives</p>
+                            </div>
+                        </a>
+                        <a href="publication.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <img src="image/icon/publication.png" alt="Publications">
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Publications</h4>
+                                <p>Browse our research papers and articles</p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html" class="btn">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Event Hero Section -->
+    <section class="event-hero">
+        <div class="container-large">
+            <div class="event-hero-content">
+                <h1>CARE Events & Conferences</h1>
+                <p>Join us for thought-provoking conferences, workshops, and seminars focused on advancing the safe and responsible development of AI technologies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Tabs Section -->
+    <section class="event-tabs">
+        <div class="container-large">
+            <div class="tabs-container">
+                <div class="tabs-nav">
+                    <button class="tab-button active">Upcoming Events</button>
+                    <button class="tab-button">Past Events</button>
+                    <button class="tab-button">Regular Series</button>
+                </div>
+            </div>
+            
+            <!-- Featured Event -->
+            <div class="section-title">
+                <h2>Highlighted Event</h2>
+                <p>Our flagship conference bringing together global experts in AI safety and ethics</p>
+            </div>
+            
+            <div class="featured-event">
+                <div class="featured-event-image">
+                    <img src="image/event/uiuc.jpg" alt="Annual AI Safety Conference">
+                </div>
+                <div class="featured-event-content">
+                    <span class="featured-event-tag">Featured Event</span>
+                    <h2 class="featured-event-title">Annual CARE AI Safety Conference</h2>
+                    <div class="featured-event-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            June 15-17, 2024
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            UIUC Campus, Urbana, IL
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-users"></i>
+                            500+ Attendees
+                        </div>
+                    </div>
+                    <p class="featured-event-desc">Our flagship event bringing together academics, industry researchers, policymakers, and advocacy groups to discuss emergent AI safety challenges. This three-day conference will feature keynote speakers, panel discussions, workshops, and networking opportunities focused on building a safer AI future.</p>
+                    <a href="#" class="event-button">Register Now</a>
+                </div>
+            </div>
+            
+            <!-- Event Grid -->
+            <div class="events-grid" style="margin-top: 60px;">
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <div class="event-date">July 8, 2024</div>
+                        <img src="https://source.unsplash.com/random/600x401/?workshop" alt="Industry Retreat">
+                    </div>
+                    <div class="event-content">
+                        <h3>Industry-Academia Retreat</h3>
+                        <p>A collaborative workshop focused on aligning industrial AI development practices with academic safety research, featuring discussions and networking.</p>
+                        <div class="event-meta">
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i> Chicago, IL
+                            </div>
+                            <a href="#" class="event-button">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <div class="event-date">August 21-22, 2024</div>
+                        <img src="https://source.unsplash.com/random/600x400/?technology" alt="AI Policy Summit">
+                    </div>
+                    <div class="event-content">
+                        <h3>AI Policy & Governance Summit</h3>
+                        <p>Join policymakers, legal experts, and AI researchers to discuss the regulatory frameworks needed to ensure AI systems are developed responsibly.</p>
+                        <div class="event-meta">
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i> Washington, DC
+                            </div>
+                            <a href="#" class="event-button">Register</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <div class="event-date">Monthly</div>
+                        <img src="https://source.unsplash.com/random/600x402/?seminar" alt="Research Seminar Series">
+                    </div>
+                    <div class="event-content">
+                        <h3>Research Seminar Series</h3>
+                        <p>Our monthly seminar series highlighting work by researchers in AI safety, with a focus on featuring women and underrepresented minority scholars.</p>
+                        <div class="event-meta">
+                            <div class="event-location">
+                                <i class="fas fa-map-marker-alt"></i> Virtual & In-Person
+                            </div>
+                            <a href="#" class="event-button">View Schedule</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Timeline Section -->
+    <section class="event-timeline">
+        <div class="container-large">
+            <div class="section-title">
+                <h2>Event Calendar</h2>
+                <p>Mark your calendars for these upcoming CARE events throughout the year</p>
+            </div>
+            
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">June 15-17, 2024</div>
+                        <h3>Annual CARE AI Safety Conference</h3>
+                        <p>Our flagship conference featuring keynotes, panels, and workshops on AI safety research and implementation.</p>
+                        <a href="#" class="event-button">Register</a>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">July 8, 2024</div>
+                        <h3>Industry-Academia Retreat</h3>
+                        <p>A collaborative workshop bridging the gap between academic research and industry applications.</p>
+                        <a href="#" class="event-button">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">August 21-22, 2024</div>
+                        <h3>AI Policy & Governance Summit</h3>
+                        <p>Discussions on regulatory frameworks and governance models for AI systems.</p>
+                        <a href="#" class="event-button">Register</a>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">September 10, 2024</div>
+                        <h3>AI Ethics Workshop</h3>
+                        <p>Hands-on workshop for practitioners on implementing ethical considerations in AI systems.</p>
+                        <a href="#" class="event-button">Join Waitlist</a>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">October 5-6, 2024</div>
+                        <h3>AI Safety Hackathon</h3>
+                        <p>Collaborative coding event focused on building safety tools and evaluation systems for AI.</p>
+                        <a href="#" class="event-button">Apply</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container-large">
+            <div class="cta-box">
+                <h2>Host or Sponsor an Event</h2>
+                <p>Interested in collaborating with CARE to host an event or become a sponsor? We're always looking for partners who share our commitment to advancing safe and responsible AI development.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary">Become a Sponsor</a>
+                    <a href="#" class="btn-secondary">Propose an Event</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaker Highlight Section -->
+    <section class="speaker-highlight">
+        <div class="container-large">
+            <div class="section-title">
+                <h2>Featured Speakers</h2>
+                <p>Distinguished experts who have shared their insights at our recent events</p>
+            </div>
+            
+            <div class="speakers-grid">
+                <!-- Speaker 1 -->
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://source.unsplash.com/random/400x400/?professor" alt="Dr. Sarah Johnson">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p class="speaker-title">AI Ethics Researcher, Stanford University</p>
+                        <p class="speaker-bio">Leading researcher on alignment techniques for large language models and their societal impacts.</p>
+                        <div class="speaker-topics">
+                            <span>AI Ethics</span>
+                            <span>LLM Safety</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Speaker 2 -->
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://source.unsplash.com/random/400x401/?professor" alt="Dr. Michael Chen">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Michael Chen</h3>
+                        <p class="speaker-title">Chief AI Safety Officer, TechGen</p>
+                        <p class="speaker-bio">Industry leader with expertise in developing robust safety measures for deployed AI systems.</p>
+                        <div class="speaker-topics">
+                            <span>Industry Safety</span>
+                            <span>AI Governance</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Speaker 3 -->
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://source.unsplash.com/random/400x402/?professor" alt="Dr. Amara Patel">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Amara Patel</h3>
+                        <p class="speaker-title">Policy Advisor, AI Governance Institute</p>
+                        <p class="speaker-bio">Expert on regulatory frameworks and policy guidelines for advanced AI systems.</p>
+                        <div class="speaker-topics">
+                            <span>AI Policy</span>
+                            <span>Regulation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Speaker 4 -->
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://source.unsplash.com/random/400x403/?professor" alt="Dr. James Wilson">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. James Wilson</h3>
+                        <p class="speaker-title">Research Director, Center for AI Safety</p>
+                        <p class="speaker-bio">Pioneer in developing formal verification methods for neural networks and AI systems.</p>
+                        <div class="speaker-topics">
+                            <span>Verification</span>
+                            <span>Technical Safety</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="btn-secondary">View All Past Speakers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Resources Section -->
+    <section class="event-resources">
+        <div class="container-large">
+            <div class="section-title">
+                <h2>Event Resources</h2>
+                <p>Access materials from our past events and prepare for upcoming ones</p>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Recorded Sessions</h3>
+                    <p>Watch presentations and panel discussions from our past conferences and workshops.</p>
+                    <a href="#" class="event-button">Watch Videos</a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Slides & Papers</h3>
+                    <p>Download presentation slides and related research papers from our events.</p>
+                    <a href="#" class="event-button">Download Materials</a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Event Logistics</h3>
+                    <p>Information about venues, accommodation, and travel for upcoming events.</p>
+                    <a href="#" class="event-button">Get Details</a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>FAQ</h3>
+                    <p>Answers to common questions about our events, registration process, and more.</p>
+                    <a href="#" class="event-button">Read FAQ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div>
+                <div class="footer-logo">
+                    <img src="image/care_full_text_smaller_plain.png" alt="Center of Safe and Responsible AI" style="height: 45px; width: auto;">
+                </div>
+                <p>Empowering businesses with safe and secure AI solutions for a trustworthy future.</p>
+                <div class="social-links">
+                    <a href="#"><span>LI</span></a>
+                    <a href="#"><span>TW</span></a>
+                    <a href="#"><span>FB</span></a>
+                </div>
+            </div>
+            <div>
+                <h4>Solutions</h4>
+                <ul class="footer-links">
+                    <li><a href="#">AI Safety Evaluation</a></li>
+                    <li><a href="#">Security Guardrails</a></li>
+                    <li><a href="#">Secure Training</a></li>
+                    <li><a href="#">Risk Assessment</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Research</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Documentation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Center of Safe and Responsible AI. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Here you would typically show/hide content based on the selected tab
+                    // For now, just a visual indication is provided
+                });
+            });
+        });
+    </script>
+</body>
+</html>
