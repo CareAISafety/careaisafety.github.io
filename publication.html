@@ -84,7 +84,7 @@
         }
         
         .logo img {
-            height: 50px;
+            height: 42px;
             width: auto;
         }
         
@@ -1279,6 +1279,61 @@
             filterCheckboxes.forEach(cb => {
                 console.log(`Checkbox: ${cb.getAttribute('data-filter-type')} - ${cb.getAttribute('data-filter-value')}`);
             });
+            
+            // Check for URL parameters to pre-select filters
+            function applyUrlFilters() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const filterParam = urlParams.get('filter');
+                
+                if (filterParam) {
+                    // Find the corresponding checkbox
+                    let checkbox;
+                    
+                    switch(filterParam) {
+                        case 'Science':
+                            checkbox = document.getElementById('filter-science');
+                            break;
+                        case 'Data/Computing':
+                            checkbox = document.getElementById('filter-data');
+                            break;
+                        case 'Algorithms':
+                            checkbox = document.getElementById('filter-algorithms');
+                            break;
+                        case 'Medicine':
+                            checkbox = document.getElementById('filter-medicine');
+                            break;
+                        case 'Economics':
+                            checkbox = document.getElementById('filter-economics');
+                            break;
+                        case 'Law/Policy':
+                            checkbox = document.getElementById('filter-law');
+                            break;
+                        case 'Social Good':
+                            checkbox = document.getElementById('filter-social');
+                            break;
+                    }
+                    
+                    if (checkbox) {
+                        checkbox.checked = true;
+                        
+                        // Update active filters
+                        activeFilters.filters.push(filterParam);
+                        
+                        // Apply the filter
+                        filterPublications();
+                        
+                        // Scroll to publications section
+                        setTimeout(() => {
+                            document.querySelector('.publications-section').scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }, 100);
+                    }
+                }
+            }
+            
+            // Run on page load
+            applyUrlFilters();
         });
     </script>
 </body>
