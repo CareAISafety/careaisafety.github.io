@@ -691,6 +691,63 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        /* CTA Section Styles */
+        .cta {
+            background-color: var(--light-purple);
+            border-radius: 10px;
+            margin: 60px auto;
+            max-width: 1200px;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+        
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 25px;
+        }
+        
+        .cta .btn {
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cta .btn:first-child {
+            background-color: var(--primary-purple);
+            color: var(--white);
+        }
+        
+        .cta .btn:last-child {
+            background-color: var(--white);
+            color: var(--primary-purple);
+        }
+        
+        .cta .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
@@ -788,7 +845,7 @@
             <div class="container-large">
                 <div class="team-section-title">
                     <h2>Leadership Team</h2>
-                    <p>Our leadership team guides the center's research direction and strategic initiatives</p>
+                    <p>Our leadership team guides CARE's research direction and strategic initiatives</p>
                 </div>
                 
                 <div class="team-grid">
@@ -1064,14 +1121,18 @@
             </div>
         </section>
 
-        <!-- Join Team Section - Updated and Properly Styled -->
-        <section class="join-team">
-            <div class="container-large">
-                <h2>Join CARE</h2>
-                <p>Passionate about AI safety? We're looking for talented researchers and engineers to help us build a safer future.</p>
-                <a href="#" class="join-button">Apply Now</a>
+        <!-- Join Team Section - Updated to match the "Get Involved with CARE" section -->
+        <section class="cta">
+            <div class="cta-content">
+                <h2>Join CARE to Shape the Future of AI Safety</h2>
+                <p>Join our community and contribute to the advancement of safe and responsible AI. Whether you're a researcher, student, industry professional, or policy advocate, there's a place for you in our community.</p>
+                <div class="cta-buttons">
+                    <a href="#subscribe" class="btn">Join Our Mailing List</a>
+                    <a href="contact.html" class="btn">Partner With Us</a>
+                </div>
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->
